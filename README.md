@@ -17,7 +17,7 @@ Collaborateurs | Nom | Prénom |
 
 - [ ] Inscription des utilisateurs et leur authentification
 - [ ] Permettre de mettre en vente des plats
-- [ ] Permettre d'acheters des plats
+- [ ] Permettre d'acheter des plats
 - [ ] Gestion du profil (avatar, nom, prénom)
 - [ ] Localisation des vendeur
 
@@ -48,6 +48,7 @@ Collaborateurs | Nom | Prénom |
 ## Cas d'utilisation - Rôle: Cuisto
 
 - [ ] S'authentifier
+- [ ] Acheter des palts
 - [ ] Ajouts des plats a vendre
 - [ ] Ajout de l'horaire de vente
 - [ ] Ajout de son positionnement géographique
