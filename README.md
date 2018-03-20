@@ -11,7 +11,7 @@ Collaborateurs | Nom | Prénom |
 4 | De Bazelaire| Etienne |
 5 | Follin | Emilie | 
 
-[GitHub](http://github.com)
+
 
 ## Cahier des charges 
 
