@@ -1,0 +1,120 @@
+
+/* coleur mcdo
+ jaune #f9df19
+ rouge #d52b1e
+ */
+
+
+
+
+/*------------------------------------ section side nav --------------------------------------------*/
+
+header, main, footer {
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+@media only screen and (max-width : 992px) {
+    header, main, footer {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.side-nav .btn{
+    border-radius: 0px 0px 0px 0px;
+}
+
+.background{
+
+    background-image: url("https://www.themississaugafoodbank.org/wp-content/uploads/2017/06/hero-image@2x.png");
+    background-position: center;
+    height: 150px;
+    margin-bottom: 30px;
+    line-height: 75px;
+
+}
+.background a{
+    width: 100%;
+
+}
+
+.background-logged{
+
+    background-image: url("https://www.themississaugafoodbank.org/wp-content/uploads/2017/06/hero-image@2x.png");
+    background-position: center;
+
+
+
+}
+.background-connexion{
+
+    background-image: url("https://www.themississaugafoodbank.org/wp-content/uploads/2017/06/hero-image@2x.png");
+    background-position: center;
+
+
+}
+
+.background-connexion input,#email,label,#row-connexion{
+    margin: 0;
+
+}
+
+.background-connexion button{
+    width: 100%;
+
+}
+
+
+
+/*------------------------------------ section filtre page d'accueil --------------------------------------------*/
+.range-field{
+    width: 50%;
+    margin: 0 auto;
+}
+
+
+/*------------------------------------ section card page d'accueil --------------------------------------------*/
+body main #div-card{
+    position: relative;
+}
+
+body .liste-plat #panier{
+    position: absolute;
+    z-index: 5;
+    left: 50%;
+    top: -20px;
+    transform: translateX(-50%);
+
+}
+
+body main .card-image{
+
+    position: relative;
+}
+
+body main .cuisto{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 15%;
+    background-color: rgba(128, 128, 128, 0.41);
+    z-index: 2;
+}
+
+body main .cuisto #profil-cuisto-card{
+    width: 35px;
+
+    transform: translateY(-50%);
+    left: 22px;
+    border-radius: 50%!important;
+}
+body main .note{
+    position: absolute;
+    bottom: 50%;
+
+    left: 60px;
+    color: white;
+}
+
