@@ -3,6 +3,11 @@
 namespace App\Controller;
 
 use App\Controller\Helper;
+use App\Entity\Auteur;
+use App\Entity\Categorie;
+use App\Entity\Recette;
+use App\Entity\Recipes;
+use App\Entity\User;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -137,12 +142,12 @@ class ArticleController extends Controller
         $message = '';
 
         # Création d'un nouvel utilisateur
-        $auteur = new Auteur();
+        $auteur = new User();
 
         # Créer le formuaire permettant l'ajout d'un utilisateur
         $form = $this->createFormBuilder($auteur)
 
-            ->add('email', TextType::class, [
+            ->add('mail', TextType::class, [
                 'required'      => true,
                 'label'         => false,
                 'attr'          => [
@@ -151,7 +156,7 @@ class ArticleController extends Controller
                 ]
             ])
 
-            ->add('password', TextType::class, [
+            ->add('pass', TextType::class, [
                 'required'      => true,
                 'label'         => false,
                 'attr'          => [
@@ -176,26 +181,43 @@ class ArticleController extends Controller
         # Vérification des données du Formulaire
         if ($form->isSubmitted() && $form->isValid()) :
             $repository = $this->getDoctrine()
-                ->getRepository(Auteur::class);
+                ->getRepository(User::class);
 
             # Récupération des données
             $auteur = $form->getData();
 
-            # On regarde si l'utilisateur est dans la BDD
-            $error = $repository->loginUser($auteur->getEmail(), $auteur->getPassword());
+            dump($auteur->getMail());
 
-            dump($error[0][0]->getId());
+            # On regarde si l'utilisateur est dans la BDD
+            $error = $repository->loginUser($auteur->getMail(), $auteur->getPass());
+
+            dump($error);
+            //die();
 
             if(!empty($error[0])) :
                 # On ouvre une session (si besoin)
                 if(!isset($session)) {$session = new Session();}
 
-                $session->set('userName', $error[0][0]->getPrenom() . ' ' . $error[0][0]->getNom());
+                $session->set('userName', $error[0][0]->getFirstname() . ' ' . $error[0][0]->getName());
                 $session->set('userId', $error[0][0]->getId());
                 $session->set('template','template-01');
 
+                $user = $this->getDoctrine()
+                    ->getRepository(User::class)
+                    ->find($session->get('userId'));
+
+                $recettes = $this->getDoctrine()
+                    ->getRepository(Recipes::class)
+                    ->findAll();
+
+                dump($user);
+                //die();
+
                 # Redirection
-                return $this->redirectToRoute('index');
+                return $this->render('index/index.html.twig', [
+                    'user'          => $user[0],
+                    'recettes'      => $recettes,
+                   ]);
 
             else :
                 $message = empty($error[1]) ? 'Email invalide' : 'Password invalide';

@@ -4,17 +4,7 @@
 
     {% if app.session.get('userName') is not null %}
 
-        <li>
-            <div class="background-logged">
-                <div class="user-view">
-
-                    <a href="#!user"><img class="circle" src="https://scontent-cdt1-1.xx.fbcdn.net/v/t1.0-1/c0.0.160.160/p160x160/20767735_1634982593192961_209014930482741611_n.jpg?oh=05cdc29ff8b2698d5d8c0927a15c5a51&oe=5B36D7D2"></a>
-                    <a href="#!name"><span class="white-text name">John Doe</span></a>
-                    <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
-                </div>
-            </div>
-        </li>
-
+        {{ render(controller('App\\Controller\\IndexController::user')) }}
 
     {% else %}
 
@@ -36,7 +26,6 @@
     <li><a class="waves-effect" href="#!"><i class="material-icons">search</i>Recherche</a></li>
 
 
-    {% include 'components/_filtre-accueil.html.twig' %}
 
 </ul>
 

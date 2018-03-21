@@ -1,4 +1,11 @@
 $(function() {
+
+    console.log('CHARGEMENT     :   SIDEBAR.JS')
+
+
+
+
+
     $('.button-collapse').sideNav({
         menuWidth: 200, // Default is 300
         edge: 'left', // Choose the horizontal origin
@@ -43,12 +50,23 @@ $(function() {
             "                        <label for=\"password\">Password</label>\n" +
             "                    </div>\n" +
             "                </div>\n" +
-            "                <button class=\"btn waves-effect waves-light\"  type=\"submit\" name=\"action\">Connexion\n" +
+            "                <button class=\"btn waves-effect waves-light submit-login\"  type=\"submit\" name=\"action\">Connexion\n" +
             "\n" +
             "                </button>\n" +
             "            </form>\n" +
             "        </div>" );
+
+
+
+
+        $('.submit-login').click(function(e) {
+            e.preventDefault()
+            location.href = "http://localhost:8000/login"
+        })
     });
+
+
+
     $('#inscription').click(function(){
         document.getElementById("overlay").style.display = "block";
     });

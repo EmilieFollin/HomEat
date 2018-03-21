@@ -3,7 +3,9 @@
 namespace App\Controller;
 
 
+use App\Entity\Recette;
 use App\Entity\Recipes;
+use App\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\MoneyType;
@@ -133,5 +135,33 @@ class IndexController extends Controller
         return $this->render('components/_nav.html.twig');
     }
 
+
+
+    // ------------------------------------------------------------
+
+
+    public function plats() {
+        return $this->render('commun/liste-plats.html.twig');
+    }
+
+
+
+    // -------------------------------------------------------------
+    public function user() {
+        #Récupération des variables de session
+        $session = $this->get('session');
+
+        # Récupération de l'ID de l'auteur
+        $auteurId = $session->get('userId');
+
+        # Récupération de l'utilisateur
+        $auteur =  $this->getDoctrine()
+            ->getRepository(User::class)
+            ->find($auteurId);
+
+        return $this->render('components/_interface-utilisateur.html.twig', [
+            'user' => $auteur
+        ]);
+    }
 
 }

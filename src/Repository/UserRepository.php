@@ -19,32 +19,56 @@ class UserRepository extends ServiceEntityRepository
         parent::__construct($registry, User::class);
     }
 
-//    /**
-//     * @return User[] Returns an array of User objects
-//     */
-    /*
-    public function findByExampleField($value)
-    {
-        return $this->createQueryBuilder('u')
-            ->andWhere('u.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('u.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
 
-    /*
-    public function findOneBySomeField($value): ?User
+
+
+
+
+
+            //////////////////////////////////////////////////////////////////
+          // -------------------------------------------------- LOGINUSER
+        //////////////////////////////////////////////////////////////////
+
+
+    public function loginUser($email, $password)
     {
-        return $this->createQueryBuilder('u')
-            ->andWhere('u.exampleField = :val')
-            ->setParameter('val', $value)
+        $user = $this->createQueryBuilder('a')
+            ->where('a.mail = :mail')->setParameter('mail', $email)
+            ->andWhere('a.pass = :pass')->setParameter('pass', $password)
             ->getQuery()
-            ->getOneOrNullResult()
-        ;
+            ->getResult();
+
+        if (empty($user)) :
+            $email = $this->createQueryBuilder('a')
+                ->where('a.mail = :mail')->setParameter('mail', $email)
+                ->getQuery()
+                ->getResult();
+        endif;
+
+        return array($user, $email);
+
+
     }
-    */
+
+
+
+
+
+
+
+            //////////////////////////////////////////////////////////////////
+          // -------------------------------------------------- FINDUSER
+        //////////////////////////////////////////////////////////////////
+
+
+    public function findUser($id_user)
+    {
+        $user =
+            $this->createQueryBuilder('a')
+                ->where('a.id = :id_user')->setParameter('id_user', $id_user)
+                ->getQuery()
+                ->getResult();
+
+        return array($user);
+    }
 }

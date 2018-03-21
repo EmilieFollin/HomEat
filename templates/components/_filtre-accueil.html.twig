@@ -1,30 +1,4 @@
 
-{# -----------  filtre accueil  ------------- #}
-
-{% extends "layout.html.twig" %}
-
-
-{% block page_title %}
-    RECHERCHE DE PLATS
-{% endblock %}
-
-{% block content %}
-
-    <div class="row contenu">
-
-
-
-        {#             ONGLETS & MENU             #}
-        {# Nav #}
-        {{ render(controller('App\\Controller\\IndexController::navbar')) }}
-
-        {# Onglets #}
-        {{ render(controller('App\\Controller\\IndexController::onglets')) }}
-
-        {# Menu #}
-        {{ render(controller('App\\Controller\\IndexController::menu')) }}
-
-
 
     {#          ---------------------------------------------             #}
 
@@ -61,18 +35,3 @@
             </form>
 
         </div>
-
-
-         {#        ---------------------------------------------           #}
-
-
-
-        {#                SLIDEBAR                  #}
-
-        {# Sidebar Left #}
-        {{ render(controller('App\\Controller\\IndexController::sidebarleft')) }}
-
-        {# Sidebar #}
-        {{ render(controller('App\\Controller\\IndexController::sidebar')) }}
-
-{% endblock %}

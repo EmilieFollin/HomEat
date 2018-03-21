@@ -2,7 +2,9 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Flex\Recipe;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
@@ -275,20 +277,5 @@ class User
         $this->lastConnexion = $lastConnexion;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getPicture()
-    {
-        return $this->picture;
-    }
-
-    /**
-     * @param mixed $picture
-     */
-    public function setPicture($picture): void
-    {
-        $this->picture = $picture;
-    }
 
 }
