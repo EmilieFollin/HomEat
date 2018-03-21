@@ -31,8 +31,8 @@
     <!-- when non logged -->
 
     <li><div class="background">
-            <a class="waves-effect waves-light btn ">Connexion</a>
-            <a class="waves-effect waves-light btn ">inscription</a>
+            <a class="waves-effect waves-light btn " id="connexion">Connexion</a>
+            <a class="waves-effect waves-light btn " id="inscription">inscription</a>
          </div></li>
 
     <!-- connexion
@@ -326,6 +326,60 @@
         </div>
 
     </div>
+    <div id="overlay">
+    <div class="row">
+    <div class="box-inscription col s8 m6 z-depth-3" id="box-inscription" style="background-color: white">
+
+
+            <div class="col s10 m6">
+                <a href="#" id="overlay-off"><i class="material-icons right">close</i></a>
+            <form action="" class="col s12" style="padding: 30px">
+
+                <h5>Inscription</h5>
+                <br>
+
+                    <div class="input-field col s12">
+                        <input id="email" type="text" class="validate">
+                        <label for="email">Pseudo</label>
+                    </div>
+
+
+                    <div class="input-field col s12">
+                        <input id="email" type="email" class="validate">
+                        <label for="email">Email</label>
+                    </div>
+
+
+
+                    <div class="input-field col s12">
+                        <input id="password" type="password" class="validate" style="margin-bottom: 0px;">
+                        <label for="password">Password</label>
+                    </div>
+
+
+                    <div class="input-field col s12">
+                        <input id="password" type="password" class="validate">
+                        <label for="password">Password</label>
+                    </div>
+
+
+                <button class="btn waves-effect waves-light"  type="submit" name="action">Go !</button>
+
+
+            </form>
+            </div>
+            <div class="col s2 m6" id="right-panel" >
+
+
+
+
+            </div>
+
+    </div>
+        </div>
+    </div>
+
+
 
 </main>
 
@@ -346,18 +400,16 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
 <script>
-    // Initialize collapse button
-    $(".button-collapse").sideNav();
-    // Initialize collapsible (uncomment the line below if you use the dropdown variation)
-    //$('.collapsible').collapsible();
+
     $('.button-collapse').sideNav({
         menuWidth: 200, // Default is 300
         edge: 'left', // Choose the horizontal origin
         closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
         draggable: true, // Choose whether you can drag to open on touch screens,
 
-    }
-  );
+    });
+
+
     $(document).ready(function() {
         $('select').material_select();
     });
@@ -373,6 +425,40 @@
         ampmclickable: true, // make AM PM clickable
         aftershow: function(){} //Function for after opening timepicker
     });
+
+
+    //------------------------------------------------ remplacement du bouton connexion par le formulaire de connexion
+
+    $('#connexion').click(function(){
+
+        $( "div.background" ).replaceWith( "<div class=\"background-connexion\">\n" +
+            "            <form action=\"\">\n" +
+            "                <div class=\"row\" id=\"row-connexion\">\n" +
+            "                    <div class=\"input-field col s12\">\n" +
+            "                        <input id=\"email\" type=\"email\" class=\"validate\">\n" +
+            "                        <label for=\"email\">Email</label>\n" +
+            "                    </div>\n" +
+            "                </div>\n" +
+            "                <div class=\"row\" id=\"row-connexion\">\n" +
+            "                    <div class=\"input-field col s12\">\n" +
+            "                        <input id=\"password\" type=\"password\" class=\"validate\">\n" +
+            "                        <label for=\"password\">Password</label>\n" +
+            "                    </div>\n" +
+            "                </div>\n" +
+            "                <button class=\"btn waves-effect waves-light\"  type=\"submit\" name=\"action\">Connexion\n" +
+            "\n" +
+            "                </button>\n" +
+            "            </form>\n" +
+            "        </div>" );
+    });
+    $('#inscription').click(function(){
+        document.getElementById("overlay").style.display = "block";
+    });
+    $('#overlay-off').click(function(){
+        document.getElementById("overlay").style.display = "none";
+    })
+
+
 
 </script>
 </body>
