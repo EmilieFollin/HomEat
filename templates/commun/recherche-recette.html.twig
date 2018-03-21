@@ -1,0 +1,54 @@
+{% extends "layout.html.twig" %}
+
+
+{% block page_title %}
+    Affiche Recette
+{% endblock %}
+
+{% block content %}
+<div class="row contenu">
+
+    {#             ONGLETS & MENU             #}
+
+    {# Onglets #}
+    {{ render(controller('App\\Controller\\TechNews\\IndexController::onglets')) }}
+
+    {# Menu #}
+    {{ render(controller('App\\Controller\\TechNews\\IndexController::menu')) }}
+
+
+
+
+            {#       -------------------------------------------------------------------------------      #}
+
+
+                        {#         CONTENU PRINCIPAL DE LA RECHERCHE DE RECETTE        #}
+
+        {#          Partie Recherche        #}
+
+        {# --END-- Partie Recherche --END-- #}
+
+
+
+        {#          Partie Resultat         #}
+
+        {# --END-- Partie Resultat --END-- #}
+
+
+                        {#       END CONTENU PRINCIPAL DE LA RECHERCHE DE RECETTE      #}
+
+
+            {#       -------------------------------------------------------------------------------      #}
+
+
+
+    {#                SLIDEBAR                  #}
+
+    {# Sidebar Left #}
+    {{ render(controller('App\\Controller\\TechNews\\IndexController::sidebarleft')) }}
+
+    {# Sidebar #}
+    {{ render(controller('App\\Controller\\TechNews\\IndexController::sidebar')) }}
+
+
+    {% endblock %}

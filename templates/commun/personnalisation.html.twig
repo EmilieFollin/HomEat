@@ -1,0 +1,64 @@
+{% extends "layout.html.twig" %}
+
+
+{% block page_title %}
+    Personnalisation
+{% endblock %}
+
+{% block content %}
+    <div class="row contenu">
+
+    {#             ONGLETS & MENU             #}
+
+    {# Onglets #}
+    {{ render(controller('App\\Controller\\TechNews\\IndexController::onglets')) }}
+
+    {# Menu #}
+    {{ render(controller('App\\Controller\\TechNews\\IndexController::menu')) }}
+
+
+
+
+            {#       -----------------------------------------------------------------      #}
+
+
+                      {#         CONTENU PRINCIPAL DE LA PERSONNALISATION       #}
+
+
+
+    <div class="recette-container">
+
+        {#               Changement de Theme                #}
+        <form action="personnalisation/changement-de-template" method="POST" class="form-template">
+            <select class="select-template" name="template">
+                <option value="template-01">Blue & White</option>
+                <option value="template-02">Dark & Grey</option>
+                <option value="template-03">Purple & Camel</option>
+            </select>
+
+            <input type="submit" id="submit-template">
+        </form>
+
+
+
+
+    </div>
+
+
+                      {#       END CONTENU PRINCIPAL DE LA PERSONNALISATION       #}
+
+
+            {#       ---------------------------------------------------------------      #}
+
+
+
+    {#                SLIDEBAR                  #}
+
+    {# Sidebar Left #}
+    {{ render(controller('App\\Controller\\TechNews\\IndexController::sidebarleft')) }}
+
+    {# Sidebar #}
+    {{ render(controller('App\\Controller\\TechNews\\IndexController::sidebar')) }}
+
+
+{% endblock %}

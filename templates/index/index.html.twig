@@ -1,0 +1,63 @@
+{% extends "layout.html.twig" %}
+
+
+{% block page_title %}
+    Accueil
+{% endblock %}
+
+{% block content %}
+<div class="row contenu">
+
+        {#             ONGLETS & MENU             #}
+
+    {# Onglets #}
+    {{ render(controller('App\\Controller\\TechNews\\IndexController::onglets')) }}
+
+    {# Menu #}
+    {{ render(controller('App\\Controller\\TechNews\\IndexController::menu')) }}
+
+
+
+
+                {#       --------------------------------------------------------      #}
+
+
+                            {#         CONTENU PRINCIPAL DE L'INDEX        #}
+
+
+                            <h1 style="text-align: center; width: 100%; margin-top: 150px;"> Bienvenue sur l'Index </h1>
+
+    <div class="index-container">
+
+
+        {#         NOTIFICATIONS ET SUGGESTIONS       #}
+        <div class="index-notifications"></div>
+
+
+        {#                MES RECETTES                 #}
+        {% if app.session.get('userName') is not null %}
+            {% include 'user/mesrecettes.html.twig' %}
+        {% endif %}
+
+
+
+    </div>
+
+
+                            {#       END CONTENU PRINCIPAL DE L'INDEX      #}
+
+
+                {#       --------------------------------------------------------      #}
+
+
+
+            {#                SLIDEBAR                  #}
+
+    {# Sidebar Left #}
+    {{ render(controller('App\\Controller\\TechNews\\IndexController::sidebarleft')) }}
+
+    {# Sidebar #}
+    {{ render(controller('App\\Controller\\TechNews\\IndexController::sidebar')) }}
+
+
+    {% endblock %}
