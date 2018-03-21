@@ -1,8 +1,13 @@
 {% extends "base.html.twig" %}
 
-{% set categories = categorie_service.findAll() %}
+{# {% set categories = categorie_service.findAll() %} #}
 
 {% block stylesheets %}
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <!-- materialize icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <!-- Favicons -->
     <link rel="shortcut icon" href="{{ asset('images/favicon.png') }}">
     <link rel="apple-touch-icon" href="{{ asset('images/apple-touch-icon-57x57.png') }}">
@@ -14,9 +19,6 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700" rel="stylesheet">
     <!-- Vendor -->
     <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet" />
-    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" />
-    <link href="{{ asset('css/normalize.min.css') }}" rel="stylesheet" />
-    <link href="{{ asset('css/owl.carousel.min.css') }}" rel="stylesheet" />
 
     {# ---------------------------------------------------------------------------------------------- #}
 
@@ -41,6 +43,9 @@
         <link href="{{ asset('css/templates/template-01/alakazam.css') }}" rel="stylesheet" />
 
     {% endif %}
+
+
+        <link href="{{ asset('css/templates/template-01/style.css') }}" rel="stylesheet">
 
 
 
@@ -86,6 +91,12 @@
     <!-- AJAX -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 
+
+    <!-- -------------------------------- Script jquery ----------------------------------- -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+
     {# --------------------------------------------------------------------------------- #}
 
     <!-- JS PERSO -->
@@ -95,6 +106,7 @@
     <script src="{{ asset('js/index/alakazam.js') }}"></script>
     <script src="{{ asset('js/index/editor.js') }}"></script>
     <script src="{{ asset('js/index/_navbar.js') }}"></script>
+    <script src="{{ asset('js/index/sidebar.js') }}"></script>
 
     {# --------------------------------------------------------------------------------- #}
 {% endblock %}

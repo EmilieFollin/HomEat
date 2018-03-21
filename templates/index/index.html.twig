@@ -6,18 +6,20 @@
 {% endblock %}
 
 {% block content %}
+
 <div class="row contenu">
 
-        {#             ONGLETS & MENU             #}
+
+
+    {#             ONGLETS & MENU             #}
+    {# Nav #}
+    {{ render(controller('App\\Controller\\IndexController::navbar')) }}
 
     {# Onglets #}
-    {{ render(controller('App\\Controller\\TechNews\\IndexController::onglets')) }}
+    {{ render(controller('App\\Controller\\IndexController::onglets')) }}
 
     {# Menu #}
-    {{ render(controller('App\\Controller\\TechNews\\IndexController::menu')) }}
-
-
-
+    {{ render(controller('App\\Controller\\IndexController::menu')) }}
 
                 {#       --------------------------------------------------------      #}
 
@@ -34,7 +36,7 @@
         <div class="index-notifications"></div>
 
 
-        {#                MES RECETTES                 #}
+        {#                CONTENU                 #}
         {% if app.session.get('userName') is not null %}
             {% include 'user/mesrecettes.html.twig' %}
         {% endif %}
@@ -51,13 +53,6 @@
 
 
 
-            {#                SLIDEBAR                  #}
-
-    {# Sidebar Left #}
-    {{ render(controller('App\\Controller\\TechNews\\IndexController::sidebarleft')) }}
-
-    {# Sidebar #}
-    {{ render(controller('App\\Controller\\TechNews\\IndexController::sidebar')) }}
 
 
     {% endblock %}
