@@ -58,7 +58,7 @@ class Address
     }
 
     /**
-     * @param mixed $adressHasUser
+     * @param mixed $addressHasUser
      */
     public function setaddressHasUser(addressHasUser $addressHasUser)
     {

@@ -60,13 +60,20 @@ class User
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\AddressHasUser", mappedBy="user")
      */
-    private $adressHasUser;
+    private $addressHasUser;
 
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Orders", mappedBy="user")
      */
     private $orders;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Roles", inversedBy="user")
+     */
+    private $roles;
+
+
 
     /**
      * @return mixed
@@ -87,17 +94,17 @@ class User
     /**
      * @return mixed
      */
-    public function getAdressHasUser()
+    public function getAddressHasUser()
     {
-        return $this->adressHasUser;
+        return $this->addressHasUser;
     }
 
     /**
      * @param mixed $adressHasUser
      */
-    public function setadressHasUser(adressHasUser $adressHasUser)
+    public function setaddressHasUser(addressHasUser $addressHasUser)
     {
-        $this->adressHasUser = $adressHasUser;
+        $this->addressHasUser = $addressHasUser;
 
         return $this;
     }
@@ -162,11 +169,6 @@ class User
         $this->roles = $roles;
         return $this;
     }
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Roles")
-     */
-    private $roles;
-
 
 
     public function getId()
