@@ -1,9 +1,9 @@
 <!-- ---------------------------------- SIDEBAR LEFT---------------------------------- -->
 <ul id="slide-out" class="side-nav fixed">
 
-    {% if app.session.get('userName') is not null %}
+    {% if app.session.get('userId') is not null %}
 
-        {{ render(controller('App\\Controller\\IndexController::user')) }}
+         {{ render(controller('App\\Controller\\IndexController::user')) }}
 
     {% else %}
 
@@ -18,9 +18,9 @@
     {% endif %}
 
 
-    <li><a class="waves-effect tooltipped " data-tooltip="Ici vous pouvez mettre en vente vos plats fait maison :)" href="#!">Partagez vos plats !</a></li>
-    <li><a class="waves-effect" href="#!">Vos ventes en cours</a></li>
-    <li><a class="waves-effect" href="#!"><i class="material-icons">perm_identity</i>Votre Profil</a></li>
+    <li><a class="waves-effect tooltipped " data-tooltip="Ici vous pouvez mettre en vente vos plats fait maison :)" href="{{ url("editor") }}">Partagez vos plats !</a></li>
+    <li><a class="waves-effect" href="{{ url("index") }}">Vos ventes en cours</a></li>
+    <li><a class="waves-effect" href="{{ url("auteur", { id :  app.session.get('userId')}) }}"><i class="material-icons">perm_identity</i>Votre Profil</a></li>
     <li><a class="waves-effect" href="#!"><i class="material-icons">timeline</i>Satistique</a></li>
     <li><a class="waves-effect" href="#!"><i class="material-icons">search</i>Recherche</a></li>
 

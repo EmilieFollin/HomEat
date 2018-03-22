@@ -4,8 +4,8 @@ namespace App\Controller;
 
 use App\Controller\Helper;
 use App\Entity\Auteur;
-use App\Entity\Categorie;
-use App\Entity\Recette;
+use App\Entity\CategoriesRecipes;
+use App\Entity\Orders;
 use App\Entity\Recipes;
 use App\Entity\User;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -215,7 +215,7 @@ class ArticleController extends Controller
 
                 # Redirection
                 return $this->render('index/index.html.twig', [
-                    'user'          => $user[0],
+                    'user'          => $user,
                     'recettes'      => $recettes,
                    ]);
 
@@ -279,11 +279,16 @@ class ArticleController extends Controller
 
     public function editor(Request $request) {
 
+            // INIT variable
+
         # Initialisation de la variable $message
         $message = '';
 
-        # Création d'un nouvel utilisateur
-        $recette = new Recette();
+        # Création d'une nouvelle recette
+        $recette = new Recipes();
+
+        #creation d'une nouvelle commande
+        $order = new Orders();
 
         # Récupération des variables de session
         $session = $this->get('session');
@@ -291,30 +296,25 @@ class ArticleController extends Controller
         # Récupération de l'ID de l'auteur
         $auteurId = $session->get('userId');
 
-        # Récupération des catégories
-        $listeCategories = $this->getDoctrine()
-            ->getRepository(Categorie::class)
-            ->findAll();
-
-        dump($listeCategories);
-        //die();
 
         # Recherche de l'Auteur de la recette
         $auteur = $this->getDoctrine()
-            ->getRepository(Auteur::class)
+            ->getRepository(User::class)
             ->find($auteurId);
 
         dump($auteur);
         //die();
 
         # Récupération de l'auteur
-        $recette->setAuteur($auteur);
+        $recette->setUser($auteur);
 
         # Récupération de l'image
         $recette->setImage('images/recettes/02.jpg');
 
         # Récupération du prix
         $recette->setPrix(5);
+
+        #recuperation de la commande
 
 
         # Créer le formuaire permettant l'ajout d'un utilisateur
@@ -453,7 +453,7 @@ class ArticleController extends Controller
 
         # Récupération de toutes les recettes de l'utilisateur
         $Allrecettes = $this->getDoctrine()
-            ->getRepository(Recette::class)
+            ->getRepository(Recipes::class)
             ->findBy(['auteur' => $session->get('userId')]);
 
         # On test la catégorie de chaque recette
@@ -555,6 +555,40 @@ class ArticleController extends Controller
         return $this->render('commun/liste-plats.html.twig', []);
     }
 
+
+
+
+    //////////////////////////////////////////////////////////////////
+    // ------------------------------------------------------ AUTEUR
+    //////////////////////////////////////////////////////////////////
+
+
+
+    /**
+     * Recherche auteur
+     * @Route("/auteur/{id}",
+     *     name="auteur",
+     *     requirements={"id" = "\d+"},
+     *     methods={"GET"})
+     * @param integer $id
+     * @return Response
+     */
+
+    public function auteur($id) {
+
+        $auteur = $this->getDoctrine()
+            ->getRepository(User::class)
+            ->find($id);
+
+//        $reviews = $this->getDoctrine()
+//            ->getRepository(Review::class)
+//            ->findByAuteur($id);
+
+        return $this->render('commun/affiche-auteur.html.twig', [
+            'auteur'    => $auteur,
+         //   'reviews'  => $reviews
+        ]);
+    }
 
 
 

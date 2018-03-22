@@ -117,7 +117,7 @@ class IndexController extends Controller
 
         # Recherche des recettes de l'auteur
         $recettes = $this->getDoctrine()
-            ->getRepository(Recette::class)
+            ->getRepository(Recipes::class)
             ->findAuteur($auteurId);
 
         return $this->render('user/mesrecettes.html.twig', [

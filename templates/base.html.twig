@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<div class="row contenu">
+
 
                         {#             ONGLETS & MENU             #}
 
@@ -20,14 +20,14 @@
     {{ render(controller('App\\Controller\\IndexController::menu')) }}
 
     {#  NavBarr #}
-    {#{{ render(controller('App\\Controller\\IndexController::navbar')) }}#}
+    {{ render(controller('App\\Controller\\IndexController::navbar')) }}
 
     {# Onglets #}
     {{ render(controller('App\\Controller\\IndexController::onglets')) }}
 
 
 
-
+<main>
 
                                     {% block body '' %}
 
@@ -39,14 +39,14 @@
 
 
     {# Sidebar Left #}
-    {{ render(controller('App\\Controller\\IndexController::sidebarleft')) }}
+    {# {{ render(controller('App\\Controller\\IndexController::sidebarleft')) }}#}
 
-    {# Sidebar #}
+     {# Sidebar #}
     {{ render(controller('App\\Controller\\IndexController::sidebar')) }}
 
 
 
-
+</main>
 
                                 {% block javascripts '' %}
 

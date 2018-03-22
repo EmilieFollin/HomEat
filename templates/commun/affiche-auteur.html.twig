@@ -1,0 +1,56 @@
+{% extends "layout.html.twig" %}
+
+{% block page_title %}
+    Affiche Recette
+{% endblock %}
+
+{% block content %}
+    <div class="row contenu">
+
+
+
+    {#       --------------------------------------------------------      #}
+
+
+            {#         CONTENU PRINCIPAL DE AUTEUR       #}
+
+
+    <div class="auteur-container">
+        <div class="auteur-nom"> {{ auteur.name }} {{ auteur.firstname }}</div>
+        <div class="image-container">
+            <div class="image"><img src="{{ auteur.avatar }}"></div>
+        </div>
+
+        <div class="informations-container"></div>
+
+        <div class="suggestions-container">
+            <div class="suggestions-titre"></div>
+        </div>
+
+    </div>
+
+    {#<div class="reviews-container">#}
+        {#{% for review in reviews %}#}
+            {#<div class="review-container">#}
+                {#<div class="avatar-container">#}
+                    {#<div class="avatar"></div>#}
+                    {#<div class="review-auteur"></div>#}
+                {#</div>#}
+                {#<div class="review">#}
+                    {#<div class="review-content"></div>#}
+                    {#<div class="review-note"></div>#}
+                {#</div>#}
+            {#</div>#}
+        {#{% endfor %}#}
+    {#</div>#}
+
+
+
+            {#       END CONTENU PRINCIPAL DE AUTEUR     #}
+
+
+    {#       --------------------------------------------------------      #}
+
+
+
+{% endblock %}
