@@ -279,7 +279,7 @@ class ArticleController extends Controller
 
     public function editor(Request $request) {
 
-            // INIT variable
+            // INITIALISATION RECETTE
 
         # Initialisation de la variable $message
         $message = '';
@@ -302,19 +302,39 @@ class ArticleController extends Controller
             ->getRepository(User::class)
             ->find($auteurId);
 
+
         dump($auteur);
-        //die();
 
         # Récupération de l'auteur
-        $recette->setUser($auteur);
+        $recette->setCuisto($auteur);
 
         # Récupération de l'image
         $recette->setImage('images/recettes/02.jpg');
 
-        # Récupération du prix
-        $recette->setPrix(5);
 
-        #recuperation de la commande
+
+
+            // INITIALISATION ORDER
+
+        # Récupération du prix
+        $order->setPrice(5);
+
+        # Recuperation des commandes
+        $order->setRecipes($recette);
+
+        # Récupération du status
+        $order->setStatus(1);
+
+        #recuperation des infos
+        $order->setRecipes();
+        $order->setPrice();
+        $order->setQuantities();
+
+
+
+
+
+
 
 
         # Créer le formuaire permettant l'ajout d'un utilisateur

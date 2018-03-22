@@ -55,11 +55,6 @@ class User
     private $avatar;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Recipes", cascade={"persist"})
-     */
-    private $recipes;
-
-    /**
      * @ORM\OneToMany(targetEntity="App\Entity\AddressHasUser", mappedBy="user")
      */
     private $addressHasUser;

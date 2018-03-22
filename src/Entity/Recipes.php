@@ -21,7 +21,10 @@ class Recipes
      * @ORM\Column(type="string", length=150)
      */
     private $names_recipes;
-
+    /**
+     * @ORM\Column(type="string", length=150)
+     */
+    private $image;
     /**
      * @ORM\Column(type="text", length=300)
      */
@@ -35,12 +38,30 @@ class Recipes
      * @ORM\ManyToMany(targetEntity="App\Entity\Ingredients", cascade={"persist"})
      */
     private $ingredients;
-
-
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", cascade={"persist"})
+     */
+    private $cuisto;
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Orders", mappedBy="recipes")
      */
     private $orders;
+
+    /**
+     * @return mixed
+     */
+    public function getCuisto()
+    {
+        return $this->cuisto;
+    }
+
+    /**
+     * @param mixed $cuisto
+     */
+    public function setCuisto($cuisto): void
+    {
+        $this->cuisto = $cuisto;
+    }
 
     /**
      * @return mixed
@@ -50,6 +71,21 @@ class Recipes
         return $this->orders;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * @param mixed $image
+     */
+    public function setImage($image): void
+    {
+        $this->image = $image;
+    }
     /**
      * @param mixed $orders
      */
