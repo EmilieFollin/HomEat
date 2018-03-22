@@ -1,0 +1,67 @@
+
+
+            {# -----------  NAVBAR  ------------- #}
+
+
+
+<div class="col-xs-12 menu">
+
+    <ul class="nav-buttons-container col-xs-10">
+        {# ALAKAZAM #}
+        <li class="nav-button-container">
+            <div>
+                <button class="nav-button">
+                    <a class="alakazam" href="{{ url('alakazamResponse', {}) }}">Alakazam !</a>
+                </button>
+            </div>
+        </li>
+
+        {% for categorie in categories %}
+            <li class="nav-button-container">
+                <div class="nav-button">
+
+                        <a href="{{ url('categorie', { libellecategorie : categorie.libelle | lower }) }}" class="nav-button nav-button-categorie">
+                            {{ categorie.libelle }}
+                        </a>
+
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+
+
+        {% if app.session.get('userName') is not null %}
+
+            {# Profil Utilisateur #}
+            <div class="user-profil-container col-xs-2">
+                <div class="user-profil">
+                    <div class="user-name-container">
+                        <a class="user-name" href="#">{{ app.session.get('userName') }}</a>
+                    </div>
+                </div>
+            </div>
+
+            {# Logout Button #}
+            <div class="">
+                <div class="">
+                    <div class="">
+                        <a class="" href="{{ url('logout', {}) }}">Logout</a>
+                    </div>
+                </div>
+            </div>
+
+        {% else %}
+            {# Login Button #}
+            <div class="">
+                <div class="">
+                    <div class="">
+                        <a class="" href="{{ url('login', {}) }}">Login</a>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+
+
+
+</div>
