@@ -14,41 +14,42 @@
 
 
 
-                        {#             ONGLETS & MENU             #}
+        {#             ONGLETS & MENU             #}
 
-    {# Menu #}
-    {{ render(controller('App\\Controller\\IndexController::menu')) }}
+{# Menu #}
+{{ render(controller('App\\Controller\\IndexController::menu')) }}
 
-    {#  NavBarr #}
-    {{ render(controller('App\\Controller\\IndexController::navbar')) }}
-
-    {# Onglets #}
-    {{ render(controller('App\\Controller\\IndexController::onglets')) }}
+{#  NavBarr #}
+{{ render(controller('App\\Controller\\IndexController::navbar')) }}
 
 
 
-<main>
-
-                                    {% block body '' %}
-
+{# Onglets #}
+{{ render(controller('App\\Controller\\IndexController::onglets')) }}
 
 
 
+    <main>
 
-                        {#                SLIDEBAR                  #}
-
-
-    {# Sidebar Left #}
-    {{ render(controller('App\\Controller\\IndexController::sidebarleft')) }}
-
-     {# Sidebar #}
-    {{ render(controller('App\\Controller\\IndexController::sidebar')) }}
+    {% block body '' %}
 
 
 
-</main>
 
-                                {% block javascripts '' %}
+
+
+    {#                SLIDEBAR                  #}
+
+
+    </main>
+
+{# Sidebar #}
+{{ render(controller('App\\Controller\\IndexController::sidebar')) }}
+
+
+
+
+{% block javascripts '' %}
 
 
 

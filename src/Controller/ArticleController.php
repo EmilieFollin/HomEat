@@ -365,7 +365,7 @@ class ArticleController extends Controller
                 'label'         => false,
                 'attr'          => [
                     'placeholder'   => 'Description',
-                    'class'         => 'form-control'
+                    'class'         => 'materialize-textarea'
                 ]
             ])
 

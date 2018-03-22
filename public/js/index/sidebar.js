@@ -72,5 +72,9 @@ $(function() {
     });
     $('#overlay-off').click(function(){
         document.getElementById("overlay").style.display = "none";
-    })
+    });
+    $(document).ready(function(){
+        // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+        $('.modal').modal();
+    });
 })

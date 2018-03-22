@@ -9,6 +9,12 @@
 
 /*------------------------------------ section side nav --------------------------------------------*/
 
+
+body {
+    background-image: linear-gradient(109.24244029308238deg, rgba(86, 216, 228,1) 6.140625%,rgba(154, 206, 149,1) 95.51562499999999%);
+}
+
+
 header, main, footer {
     padding-left: 200px;
     padding-right: 200px;
@@ -23,6 +29,7 @@ header, main, footer {
 
 .side-nav .btn{
     border-radius: 0px 0px 0px 0px;
+    width: 100%;
 }
 
 .background{
