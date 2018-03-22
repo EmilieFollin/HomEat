@@ -305,8 +305,10 @@
                         </div>
                         <div  style="background-color: rgba(176,176,176,0.16)">
                             <div class="row">
+
                                 <div class="col s8"> <strong><p>24 bis rue du champs des oiseaux, Rouen 76000</p></strong></div> <div class="col s4"><strong><p>DateTime</p></strong></div>
                             </div>
+
 
                         </div>
 
@@ -332,6 +334,7 @@
 
 
             <div class="col s10 m6">
+                <br>
                 <a href="#" id="overlay-off"><i class="material-icons right">close</i></a>
             <form action="" class="col s12" style="padding: 30px">
 
@@ -394,9 +397,6 @@
 
 <!-- -------------------------------- Script jquery ----------------------------------- -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
 <script>
