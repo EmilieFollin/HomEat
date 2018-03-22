@@ -124,7 +124,7 @@ class Orders
     /**
      * @return mixed
      */
-    public function getPrice()
+    public function getsice()
     {
         return $this->price;
     }
