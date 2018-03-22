@@ -174,7 +174,7 @@ class Recipes
     /**
      * @return mixed
      */
-    public function getdescription()
+    public function getDescription()
     {
         return $this->description;
     }
@@ -182,9 +182,9 @@ class Recipes
     /**
      * @param mixed $description
      */
-    public function setdescription($description): void
+    public function setDescription($description): void
     {
-        $this->descriptios = $description;
+        $this->description = $description;
     }
 
     public function getId()

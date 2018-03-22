@@ -345,6 +345,11 @@ class ArticleController extends Controller
                 ]
             ])
 
+            ->add('image', FileType::class, [
+                'required'  => false,
+                'label'     => false,
+            ])
+
             ->add('price', MoneyType::class, [
                 'required'      => false,
                 'currency'      => 'EUR',
