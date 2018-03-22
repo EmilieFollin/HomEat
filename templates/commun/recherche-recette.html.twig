@@ -6,15 +6,6 @@
 {% endblock %}
 
 {% block content %}
-<div class="row contenu">
-
-    {#             ONGLETS & MENU             #}
-
-    {# Onglets #}
-    {{ render(controller('App\\Controller\\TechNews\\IndexController::onglets')) }}
-
-    {# Menu #}
-    {{ render(controller('App\\Controller\\TechNews\\IndexController::menu')) }}
 
 
 
@@ -42,13 +33,6 @@
 
 
 
-    {#                SLIDEBAR                  #}
-
-    {# Sidebar Left #}
-    {{ render(controller('App\\Controller\\TechNews\\IndexController::sidebarleft')) }}
-
-    {# Sidebar #}
-    {{ render(controller('App\\Controller\\TechNews\\IndexController::sidebar')) }}
 
 
     {% endblock %}

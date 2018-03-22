@@ -6,18 +6,6 @@
 
 {% block content %}
 
-    <div class="row contenu">
-
-
-                        {#                  ONGLET & MENU                    #}
-
-            {# Onglets #}
-        {{ render(controller('App\\Controller\\TechNews\\IndexController::onglets')) }}
-
-            {# Onglet Menu #}
-        {{ render(controller('App\\Controller\\TechNews\\IndexController::menu')) }}
-
-
 
         {#       -------------------------------------------------------------------------------------      #}
 
@@ -33,7 +21,7 @@
 
                                     {#        QUESTIONS        #}
 
-             {{ render(controller('App\\Controller\\TechNews\\IndexController::alakazamQuestions')) }}
+             {{ render(controller('App\\Controller\\IndexController::alakazamQuestions')) }}
 
                                     {#      END QUESTIONS      #}
 
@@ -45,12 +33,6 @@
 
 
 
-                    {#          ---------------------------------------------             #}
-
-                                    {#        CAROUSEL        #}
-
-
-                                    {#      END CAROUSEL      #}
 
                     {#          ---------------------------------------------             #}
 
@@ -59,20 +41,6 @@
 
 
         {#       ------------------------------------------------------------------------------------      #}
-
-    </div>
-
-
-
-
-                    {#                SLIDEBAR                  #}
-            {# Attention, SLIDEBAR ne doit pas être dans la div class="contenu" #}
-
-    {# Sidebar Left #}
-    {{ render(controller('App\\Controller\\TechNews\\IndexController::sidebarleft')) }}
-
-    {# Sidebar #}
-    {{ render(controller('App\\Controller\\TechNews\\IndexController::sidebar')) }}
 
 
 {% endblock %}

@@ -20,7 +20,7 @@ class Recipes
     /**
      * @ORM\Column(type="string", length=150)
      */
-    private $names_recipes;
+    private $titre;
     /**
      * @ORM\Column(type="string", length=150)
      */
@@ -28,7 +28,12 @@ class Recipes
     /**
      * @ORM\Column(type="text", length=300)
      */
-    private $descriptions_recipes;
+    private $description;
+
+    /**
+     * @ORM\Column(type="decimal", scale=2)
+     */
+    private $price;
 
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\CategoriesRecipes", cascade={"persist"})
@@ -42,11 +47,6 @@ class Recipes
      * @ORM\ManyToOne(targetEntity="App\Entity\User", cascade={"persist"})
      */
     private $cuisto;
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Orders", mappedBy="recipes")
-     */
-    private $orders;
-
     /**
      * @return mixed
      */
@@ -139,37 +139,52 @@ class Recipes
         $this->ingredients = new ArrayCollection();
     }
 
+    /**
+     * @return mixed
+     */
+    public function getTitre()
+    {
+        return $this->titre;
+    }
+
+    /**
+     * @param mixed $titre
+     */
+    public function setTitre($titre): void
+    {
+        $this->titre = $titre;
+    }
 
     /**
      * @return mixed
      */
-    public function getNamesRecipes()
+    public function getPrice()
     {
-        return $this->names_recipes;
+        return $this->price;
     }
 
     /**
-     * @param mixed $names_recipes
+     * @param mixed $price
      */
-    public function setNamesRecipes($names_recipes): void
+    public function setPrice($price): void
     {
-        $this->names_recipes = $names_recipes;
+        $this->price = $price;
     }
 
     /**
      * @return mixed
      */
-    public function getDescriptionsRecipes()
+    public function getdescription()
     {
-        return $this->descriptions_recipes;
+        return $this->description;
     }
 
     /**
-     * @param mixed $descriptions_recipes
+     * @param mixed $description
      */
-    public function setDescriptionsRecipes($descriptions_recipes): void
+    public function setdescription($description): void
     {
-        $this->descriptions_recipes = $descriptions_recipes;
+        $this->descriptios = $description;
     }
 
     public function getId()

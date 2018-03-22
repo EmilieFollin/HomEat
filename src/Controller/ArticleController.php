@@ -287,21 +287,16 @@ class ArticleController extends Controller
         # Création d'une nouvelle recette
         $recette = new Recipes();
 
-        #creation d'une nouvelle commande
-        $order = new Orders();
-
         # Récupération des variables de session
         $session = $this->get('session');
 
         # Récupération de l'ID de l'auteur
         $auteurId = $session->get('userId');
 
-
         # Recherche de l'Auteur de la recette
         $auteur = $this->getDoctrine()
             ->getRepository(User::class)
             ->find($auteurId);
-
 
         dump($auteur);
 
@@ -313,31 +308,23 @@ class ArticleController extends Controller
 
 
 
-
-            // INITIALISATION ORDER
-
-        # Récupération du prix
-        $order->setPrice(5);
-
-        # Recuperation des commandes
-        $order->setRecipes($recette);
-
-        # Récupération du status
-        $order->setStatus(1);
-
-        #recuperation des infos
-        $order->setRecipes();
-        $order->setPrice();
-        $order->setQuantities();
+//
+//            // INITIALISATION ORDER
+//
+//        # Récupération du prix
+//        $order->setPrice(5);
+//
+//        # Recuperation des commandes
+//        $order->setRecipes($recette);
+//
+//        # Recuperation des infos
+//        $order->setQuantities(2);
 
 
 
 
 
-
-
-
-        # Créer le formuaire permettant l'ajout d'un utilisateur
+        # Créer le formuaire permettant l'ajout d'une recette
         $form = $this->createFormBuilder($recette)
 
             ->add('titre', TextType::class, [
@@ -358,11 +345,11 @@ class ArticleController extends Controller
                 ]
             ])
 
-            ->add('prix', MoneyType::class, [
+            ->add('price', MoneyType::class, [
                 'required'      => false,
-                'currency'      => 'USD',
+                'currency'      => 'EUR',
                 'label'         => false,
-                'empty_data'    => 'Prix',
+                'empty_data'    => 'Price',
                 'attr'          => [
                     'class'         => 'form-control'
                 ]

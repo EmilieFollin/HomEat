@@ -17,10 +17,7 @@ class Orders
      */
     private $id;
 
-    /**
-     * @ORM\Column(type="decimal", scale=2)
-     */
-    private $price;
+
 
 
     /**
@@ -121,21 +118,7 @@ class Orders
         $this->reviews->removeElement($Review);
     }
 
-    /**
-     * @return mixed
-     */
-    public function getsice()
-    {
-        return $this->price;
-    }
 
-    /**
-     * @param mixed $price
-     */
-    public function setPrice($price): void
-    {
-        $this->price = $price;
-    }
 
     /**
      * @return mixed
