@@ -7,6 +7,7 @@ use App\Entity\Auteur;
 use App\Entity\CategoriesRecipes;
 use App\Entity\Orders;
 use App\Entity\Recipes;
+use App\Entity\Roles;
 use App\Entity\User;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -45,12 +46,23 @@ class ArticleController extends Controller
     public function signin(Request $request) {
 
         # Création d'un nouvel utilisateur
-        $auteur = new Auteur();
+        $auteur = new User();
+
+        # Récupération du role
+        $role = $this->getDoctrine()
+            ->getRepository(Roles::class)
+            ->find(2);
+
+        # Sauvegarde du role
+        $auteur->setRoles($role);
+
+
+
 
         # Créer le formuaire permettant l'ajout d'un utilisateur
         $form = $this->createFormBuilder($auteur)
 
-            ->add('nom', TextType::class, [
+            ->add('name', TextType::class, [
                 'required'      => true,
                 'label'         => false,
                 'attr'          => [
@@ -59,7 +71,7 @@ class ArticleController extends Controller
                 ]
             ])
 
-            ->add('prenom', TextType::class, [
+            ->add('firstname', TextType::class, [
                 'required'      => true,
                 'label'         => false,
                 'attr'          => [
@@ -68,7 +80,7 @@ class ArticleController extends Controller
                 ]
             ])
 
-            ->add('email', TextType::class, [
+            ->add('mail', TextType::class, [
                 'required'      => true,
                 'label'         => false,
                 'attr'          => [
@@ -77,7 +89,7 @@ class ArticleController extends Controller
                 ]
             ])
 
-            ->add('password', TextType::class, [
+            ->add('pass', TextType::class, [
                 'required'      => true,
                 'label'         => false,
                 'attr'          => [
@@ -85,12 +97,14 @@ class ArticleController extends Controller
                     'class'         => 'form-control'
                 ]
             ])
-/*
+
             ->add('avatar', FileType::class, [
                 'required'  => false,
                 'label'     => false,
             ])
-*/
+
+
+
             ->add('submit', SubmitType::class, [
                 'label'         => false,
                 'attr'          => [
@@ -107,6 +121,16 @@ class ArticleController extends Controller
         if ($form->isSubmitted() && $form->isValid()) :
             # Récupération des données
             $auteur = $form->getData();
+
+
+            # On récupère le fichier image (string)
+            $image = $auteur->getAvatar();
+
+            # On modifie la valeur
+            $image = '/images/avatar' . $image;
+
+            # On sauvegarde le lien de l'image
+            $auteur->setAvatar($image);
 
             # Insertion en BDD
             $em = $this->getDoctrine()->getManager();
@@ -348,6 +372,10 @@ class ArticleController extends Controller
             ->add('image', FileType::class, [
                 'required'  => false,
                 'label'     => false,
+                'data_class' => null,
+                'attr'          => [
+                    'class'         => 'form-control'
+                ]
             ])
 
             ->add('price', MoneyType::class, [
@@ -383,6 +411,15 @@ class ArticleController extends Controller
 
             # Récupération des données
             $recette = $form->getData();
+
+            # On récupère le fichier image (string)
+            $image = $recette->getImage();
+
+            # On modifie la valeur
+            $image = '/images/product' . $image;
+
+            # On sauvegarde le lien de l'image
+            $recette->setImage($image);
 
             # Traitement des erreurs
             // [...]

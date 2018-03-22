@@ -133,8 +133,11 @@ class User
 
     public function __construct()
     {
-        $this->recipes = new ArrayCollection();
+        $this->recipes          = new ArrayCollection();
+        $this->dateInscription  = new \DateTime();
+        $this->lastConnexion    = new \DateTime();
     }
+
 
     /**
      * @return mixed

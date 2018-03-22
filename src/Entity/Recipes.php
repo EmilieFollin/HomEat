@@ -22,7 +22,7 @@ class Recipes
      */
     private $titre;
     /**
-     * @ORM\Column(type="string", length=150)
+     * @ORM\Column(type="string")
      */
     private $image;
     /**
