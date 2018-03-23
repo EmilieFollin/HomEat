@@ -12,9 +12,9 @@
     {#          ---------------------------------------------             #}
 
                         {#       FORMULAIRE       #}
-<div class="container">
+<div class="container" id="container-editor">
         <div class="row">
-            <div class="col s12" id="formulaire-editor">
+            <div class="col s12"  id="formulaire-editor">
                 <div class="col s12" id="titre-editor">
                     <h1>Mettez en vente un nouveau plat !</h1>
                 </div>
@@ -35,14 +35,17 @@
                         </div>
                     </div>
 
-
+                    <div class="row">
                     <div class="form-group">
                         {# Prix de la recette #}
-                        <div class="col-xs-4">
+                        <div class="input-field col s4">
                             {{ form_row(form.price) }}
                         </div>
-
-
+                        <input id="heure-debut" type="text" class="timepicker col s4">
+                        <label for="heure-debut" class="">C'est quand qu'on mange</label>
+                        <input id="heure-fin" type="text" class="timepicker col s4">
+                        <label for="heure-fin" class="">C'est froid</label>
+                    </div>
                         {# Categorie de la recette #}
                         {#
                         <div class="col-xs-6">

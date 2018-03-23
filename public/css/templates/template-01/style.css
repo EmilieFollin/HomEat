@@ -162,3 +162,27 @@ body main .note{
     z-index: 5; /* Specify a stack order in case you're using a different order for other elements */
     cursor: pointer; /* Add a pointer on hover */
 }
+
+
+/* --------------------------------------------------------- auteur ------------------------------------------*/
+
+.box-auteur{
+    border-radius: 20px;
+    display: flex;
+
+
+}
+
+.box-auteur hr {
+    margin-bottom: 15px;
+    margin-top: 0px;
+}
+
+/*------------------------------------------------------------ commentaire sur page auteur -------------------*/
+
+.un-commentaire{
+    background-color: white;
+    border-radius: 10px;
+
+
+}
