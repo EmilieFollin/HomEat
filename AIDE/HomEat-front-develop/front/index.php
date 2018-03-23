@@ -87,6 +87,45 @@
                 </select>
                 <label><i class="material-icons">attach_money</i>Prix</label>
             </div>
+            <div class="center-align">
+            <ul class="col s8 list-inline valign-wrapper ">
+                <li><p>
+                        <input type="checkbox" id="viande" />
+                        <label for="viande">Viande</label>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <input type="checkbox" id="poisson" />
+                        <label for="poisson">Poisson</label>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <input type="checkbox" id="vegetarien" />
+                        <label for="vegetarien">Vegetarien</label>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <input type="checkbox" id="sans-gluten" />
+                        <label for="sans-gluten">Sans-gluten</label>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <input type="checkbox" id="halal" />
+                        <label for="halal">Halal</label>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <input type="checkbox" id="casher" />
+                        <label for="casher">casher</label>
+                    </p>
+                </li>
+            </ul>
+            </div>
         </div>
         <p class="range-field">
             <label for="distance">Distance</label>

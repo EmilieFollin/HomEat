@@ -117,7 +117,7 @@
 
 
             </div>
-            <div class="col s2 m6" id="right-panel-message">
+            <div class="col s12 m6" id="right-panel-message">
 
                 <div class="col s12" style="background-color: rgba(128,128,128,0.05); margin-top:10px; overflow: auto; max-height:500px;">
 
