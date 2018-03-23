@@ -346,8 +346,8 @@ class ArticleController extends Controller
         # Récupération de l'auteur
         $recette->setCuisto($auteur);
 
-        # Récupération de l'image
-        $recette->setImage('images/recettes/02.jpg');
+//        # Récupération de l'image
+//        $recette->setImage('images/recettes/02.jpg');
 
 
 
@@ -428,23 +428,29 @@ class ArticleController extends Controller
         # Vérification des données du Formulaire
         if ($form->isSubmitted()) :
 
+
+
             # Récupération des données
             $recette = $form->getData();
 
-            # On récupère le fichier image (string)
+            # Récupération de l'image
             $image = $recette->getImage();
 
-            # On modifie la valeur
-            $image = '/images/product' . $image;
+            # String Aléatoire
+            $chaine  = rand(1000000, 99999999);
 
-            # On sauvegarde le lien de l'image
-            $recette->setImage($image);
+            # Nom du fichier
+            $fileName = $chaine.'.'.$image->guessExtension();
 
-            # Traitement des erreurs
-            // [...]
-
-            //dump($recette);
+            dump($this);
             //die();
+
+            $image->move(
+                $this->getParameter('recettes'),
+                $fileName
+            );
+
+            $recette->setImage('images/recettes/' . $fileName);
 
             # Insertion en BDD
             $em = $this->getDoctrine()->getManager();
