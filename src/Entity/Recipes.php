@@ -47,6 +47,54 @@ class Recipes
      * @ORM\ManyToOne(targetEntity="App\Entity\User", cascade={"persist"})
      */
     private $cuisto;
+
+    /**
+     * @return mixed
+     * @ORM\Column(type="time")
+     */
+    private $hour;
+
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $quantity;
+
+    /**
+     * @return mixed
+     */
+    public function getHour()
+    {
+        return $this->hour;
+    }
+
+    /**
+     * @param mixed $hour
+     */
+    public function setHour($hour): void
+    {
+        $this->hour = $hour;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getQuantity()
+    {
+        return $this->quantity;
+    }
+
+    /**
+     * @param mixed $quantity
+     */
+    public function setQuantity($quantity): void
+    {
+        $this->quantity = $quantity;
+    }
+
+
+
+
     /**
      * @return mixed
      */

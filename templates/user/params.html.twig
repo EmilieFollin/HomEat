@@ -1,0 +1,61 @@
+{% extends "layout.html.twig" %}
+
+
+{% block page_title %}
+    MES PARAMETRES
+{% endblock %}
+
+{% block content %}
+
+
+
+    {#          ---------------------------------------------             #}
+
+    {#       FORMULAIRE       #}
+
+    <div class="Nom">
+        Changer mon Nom
+    </div>
+
+    <div class="Nom">
+        Changer mon Prenom
+    </div>
+
+
+
+    <h3>Formulaire d'annonce</h3>
+
+    <form class="well" method="POST" action="add-address">
+        {{ form_row(form.street) }}
+        {{ form_row(form.zip_code) }}
+        {{ form_row(form.city) }}
+        {{ form_row(form.number) }}
+        {{ form_row(form.comment) }}
+        {{ form_row(form.save) }}
+    </form>
+
+
+    {#       END FORMULAIRE       #}
+
+    {#        ---------------------------------------------           #}
+
+
+
+
+
+{% endblock %}
+
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.min.css" integrity="sha256-AWdeVMUYtwLH09F6ZHxNgvJI37p+te8hJuSMo44NVm0=" crossorigin="anonymous" />
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="//cdn.ckeditor.com/4.8.0/full/ckeditor.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/js/dropify.min.js" integrity="sha256-SUaao5Q7ifr2twwET0iyXVy0OVnuFJhGVi5E/dqEiLU=" crossorigin="anonymous"></script>
+    <script>
+
+    </script>
+{% endblock %}

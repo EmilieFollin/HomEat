@@ -3,6 +3,7 @@
 parameters:
     locale  : 'en'
     avatars : '%kernel.project_dir%/public/images/avatars'
+    recettes : '%kernel.project_dir%/public/images/recettes'
 
 services:
     # default configuration for services in *this* file
