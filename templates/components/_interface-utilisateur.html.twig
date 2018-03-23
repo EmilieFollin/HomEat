@@ -1,7 +1,7 @@
 <li>
     <div class="background-logged">
         <div class="user-view">
-            {#<a href="{{ url('auteur', {id : user.id}) }}"><img class="circle" src="{{ asset(user.avatar) }}"></a>#}
+            <a href="{{ url('auteur', {id : user.id}) }}"><img class="circle" src="{{ asset(user.avatar) }}"></a>
             <a href="#!name"><span class="white-text name">{{ user.name }}</span></a>
             <a href="#!email"><span class="white-text email">{{ user.mail }}</span></a>
             <a href="{{ url("logout") }}" class="waves-effect waves-light btn " id="logout">logout</a>

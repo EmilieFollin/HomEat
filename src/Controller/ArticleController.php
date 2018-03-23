@@ -101,6 +101,9 @@ class ArticleController extends Controller
             ->add('avatar', FileType::class, [
                 'required'  => false,
                 'label'     => false,
+                'attr'      =>[
+                    'class' => 'dropify'
+                ]
             ])
 
 
@@ -122,20 +125,36 @@ class ArticleController extends Controller
             # Récupération des données
             $auteur = $form->getData();
 
-
-            # On récupère le fichier image (string)
+            # Récupération de l'image
             $image = $auteur->getAvatar();
 
-            # On modifie la valeur
-            $image = '/images/avatar' . $image;
+            # String Aléatoire
+            $chaine  = rand(1000000, 99999999);
 
-            # On sauvegarde le lien de l'image
-            $auteur->setAvatar($image);
+            # Nom du fichier
+            $fileName = $chaine.'.'.$image->guessExtension();
+
+            dump($this);
+            //die();
+
+            $image->move(
+                $this->getParameter('avatars'),
+                $fileName
+            );
+
+            $auteur->setAvatar('images/avatars/' . $fileName);
 
             # Insertion en BDD
             $em = $this->getDoctrine()->getManager();
             $em->persist($auteur);
             $em->flush();
+
+            # Récupération des variables de session
+            if(!isset($session)) {$session = new Session();}
+
+            $session->set('userName', $auteur->getFirstname() . ' ' . $auteur->getName());
+            $session->set('userId',$auteur->getId());
+            $session->set('template','template-01');
 
             return $this->redirectToRoute('index');
 
