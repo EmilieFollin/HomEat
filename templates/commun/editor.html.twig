@@ -11,24 +11,26 @@
 
     {#          ---------------------------------------------             #}
 
-                        {#       FORMULAIRE       #}
-
+    {#       FORMULAIRE       #}
+    <div class="container">
         <div class="row">
-            <div class="col-xs-10 col-xs-offset-1">
+            <div class="col s12" id="formulaire-editor">
+                <div class="col s12" id="titre-editor">
+                    <h1>Mettez en vente un nouveau plat !</h1>
+                </div>
                 <form class="form-horizontal" method="POST"
                       enctype="multipart/form-data">
-                    <h3>Editez votre recette !</h3>
 
                     {# Titre de la recette #}
-                    <div class="form-group">
-                        <div class="col-md-8">
+                    <div class="row">
+                        <div class="input-field col s12">
                             {{ form_row(form.titre) }}
                         </div>
                     </div>
 
                     {# Description de la recette #}
-                    <div class="form-group">
-                        <div class="col-md-8">
+                    <div class="materialize-textarea">
+                        <div class="col s12">
                             {{ form_row(form.description) }}
                         </div>
                     </div>
@@ -50,12 +52,13 @@
                     </div>
 
                     {# Featured Image (File) #}
-                    <div class="form-group">
-                        <label class="col-md-2 control-label">
-                            Image
-                        </label>
-                        <div class="col-md-8">
+                    <div class="file-field input-field">
+                        <div class="btn">
+                            <span>Image</span>
                             {{ form_row(form.image) }}
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text">
                         </div>
                     </div>
 
@@ -73,7 +76,7 @@
                     {# Submit #}
                     <div class="form-group">
                         <div class="col-xs-7 col-xs-offset-3">
-                             {{ form_widget(form.submit, { 'label': 'Click me' }) }}
+                            {{ form_widget(form.submit, { 'label': 'Click me' }) }}
                         </div>
                     </div>
 
@@ -82,10 +85,13 @@
                 </form>
             </div>
         </div>
+    </div>
 
-                        {#       END FORMULAIRE       #}
 
-         {#        ---------------------------------------------           #}
+
+    {#       END FORMULAIRE       #}
+
+    {#        ---------------------------------------------           #}
 
 
 
