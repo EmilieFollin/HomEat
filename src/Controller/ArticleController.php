@@ -455,6 +455,7 @@ class ArticleController extends Controller
         if ($form->isSubmitted()) :
 
 
+
             # Récupération des données
             $recette = $form->getData();
 
@@ -462,10 +463,17 @@ class ArticleController extends Controller
             $image = $recette->getImage();
 
             # String Aléatoire
+
             $chaine = rand(1000000, 99999999);
 
             # Nom du fichier
             $fileName = $chaine . '.' . $image->guessExtension();
+
+            $chaine  = rand(1000000, 99999999);
+
+            # Nom du fichier
+            $fileName = $chaine.'.'.$image->guessExtension();
+
 
             dump($this);
             //die();

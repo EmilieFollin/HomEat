@@ -1,40 +1,33 @@
-.slidebar {
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+
+
+
+/*-------------------------------- CSS SideBar  --------------------------------------*/
+#sidebar {
+    width: 200px;
+    height: 100vh;
     position: fixed;
-    z-index: 1000;
-
-    width: 15%;
-    height: 90vh;
-    top: 10vh;
-
-    background-color: rgba(0,9,41,0.89);
+    top: 0vh;
+    right: 0;
+    color: white;
+    background-color: white;
 }
 
-.slidebar-right {
-    left: 85%;
+circle responsive-img {
+    width: 100%;
+}
+#meilleur {
+    margin-left:10px;
+    font-family: 'Amatic SC', cursive;
+    color: black;
+
+}
+#recette {
+    margin-left:10px;
+    font-family: 'Amatic SC', cursive;
+    color: black;
 }
 
-.slidebar-left {
-    left: 0;
-}
-
-
-.recette-top-container {
-    width: 70%;
-    height: auto;
-
-    text-align: center;
-    top: 15%;
-    left: 15%;
-
-    background-color: rgba(255,255,255,0.7);
-
-    position: absolute;
-    z-index: 5000;
-}
-
-.recette-image {
-    width: 70%;
-    height: 90vh;
-    top: 10vh;
-    position: fixed;
+#logo {
+    padding-top: 7px;
 }

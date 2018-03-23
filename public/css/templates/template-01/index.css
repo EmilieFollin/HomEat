@@ -59,8 +59,8 @@
 }
 
 .onglet-menu {
-    right: 15%;
-    border-bottom-left-radius: 100%;
+    right: 10%;
+
 }
 
 .onglet-retour {
@@ -68,9 +68,7 @@
     border-bottom-right-radius: 100%;
 }
 
-.onglet-menu:hover {
-    background-color: blue;
-}
+
 
 .onglet-retour:hover {
     background-color: red;
@@ -152,6 +150,11 @@
     padding: 0 !important;
 }
 
+.mesrecettes-container img {
+    width: 100%;
+    height: 100%;
+    float: left;
+}
 
 
 
