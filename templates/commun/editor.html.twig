@@ -1,0 +1,107 @@
+{% extends "layout.html.twig" %}
+
+
+{% block page_title %}
+    EDITEUR DE RECETTE
+{% endblock %}
+
+{% block content %}
+
+
+
+    {#          ---------------------------------------------             #}
+
+                        {#       FORMULAIRE       #}
+
+        <div class="row">
+            <div class="col-xs-10 col-xs-offset-1">
+                <form class="form-horizontal" method="POST"
+                      enctype="multipart/form-data">
+                    <h3>Editez votre recette !</h3>
+
+                    {# Titre de la recette #}
+                    <div class="form-group">
+                        <div class="col-md-8">
+                            {{ form_row(form.titre) }}
+                        </div>
+                    </div>
+
+                    {# Description de la recette #}
+                    <div class="form-group">
+                        <div class="col-md-8">
+                            {{ form_row(form.description) }}
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        {# Prix de la recette #}
+                        <div class="col-xs-4">
+                            {{ form_row(form.price) }}
+                        </div>
+
+
+                        {# Categorie de la recette #}
+                        {#
+                        <div class="col-xs-6">
+                            {{ form_row(form.categorie) }}
+                        </div>
+                        #}
+                    </div>
+
+
+                    {# Etapes de la recette #}
+                    <em>Ajouter une étape :</em>
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            <div class="etape-container"></div>
+                            <button class="add-etape col-xs-2">+</button>
+                        </div>
+                    </div>
+
+
+                    {# Submit #}
+                    <div class="form-group">
+                        <div class="col-xs-7 col-xs-offset-3">
+                             {{ form_widget(form.submit, { 'label': 'Click me' }) }}
+                        </div>
+                    </div>
+
+                    {{ form_rest(form) }}
+
+                </form>
+            </div>
+        </div>
+
+                        {#       END FORMULAIRE       #}
+
+         {#        ---------------------------------------------           #}
+
+
+
+
+
+{% endblock %}
+
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.min.css" integrity="sha256-AWdeVMUYtwLH09F6ZHxNgvJI37p+te8hJuSMo44NVm0=" crossorigin="anonymous" />
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="//cdn.ckeditor.com/4.8.0/full/ckeditor.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/js/dropify.min.js" integrity="sha256-SUaao5Q7ifr2twwET0iyXVy0OVnuFJhGVi5E/dqEiLU=" crossorigin="anonymous"></script>
+    <script>
+        CKEDITOR.replace('form_contenu')
+        $('.dropify').dropify({
+            messages: {
+                default: 'Glissez-d&eacute;posez un fichier ici ou cliquez',
+                replace: 'Glissez-d&eacute;posez un fichier ou cliquez pour remplacer',
+                remove:  'Supprimer',
+                error:   'D&eacute;sol&eacute;, le fichier est trop volumineux'
+            }
+        });
+    </script>
+{% endblock %}
