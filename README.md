@@ -15,10 +15,10 @@ Collaborateurs | Nom | Prénom |
 
 ## Cahier des charges 
 
-- [ ] Inscription des utilisateurs et leur authentification
-- [ ] Permettre de mettre en vente des plats
+> - [x]  Inscription des utilisateurs et leur authentification
+> - [x]  Permettre de mettre en vente des plats
 - [ ] Permettre d'acheter des plats
-- [ ] Gestion du profil (avatar, nom, prénom)
+> - [x]  Gestion du profil (avatar, nom, prénom)
 - [ ] Localisation des vendeur
 
 ## Consultation du site
@@ -26,13 +26,13 @@ Collaborateurs | Nom | Prénom |
 - [ ] Afficher les plats
 - [ ] Afficher les cuistos
 - [ ] Voir les avis des utilisateurs concernant les cuistos et leurs plats
-- [ ] S'inscrire
+> - [x]  S'inscrire
 - [ ] Se désinscrire
 
 ## Cas d'utilisation - Rôle: Visiteur
 
-- [ ] Permettre la consultation du site
-- [ ] S'authentifier 
+> - [x]  Permettre la consultation du site
+> - [x]  S'authentifier 
 
 
 ## Cas d'utilisation - Rôle: Client
@@ -47,9 +47,9 @@ Collaborateurs | Nom | Prénom |
 
 ## Cas d'utilisation - Rôle: Cuisto
 
-- [ ] S'authentifier
-- [ ] Acheter des palts
-- [ ] Ajouts des plats a vendre
+> - [x]  S'authentifier
+- [ ] Acheter des plats
+> - [x]  Ajouts des plats a vendre
 - [ ] Ajout de l'horaire de vente
 - [ ] Ajout de son positionnement géographique
 - [ ] Gérer le compte utilisateur (modification coordonnées, mot de passe, avatar, pseudo)
