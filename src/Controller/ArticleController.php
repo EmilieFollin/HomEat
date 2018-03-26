@@ -887,7 +887,18 @@ class ArticleController extends Controller
         $review->setuser2($destinataire);
 
 
-     
+//        $formBuilder = $this->createFormBuilder($review);
+//
+//        //
+//        $formBuilder
+//            ->add('comments', TextType::class)
+//            ->add('notes', IntegerType::class);
+//
+//        // Pour l'instant, pas de candidatures, catégories, etc., on les gérera plus tard
+//
+//        // À partir du formBuilder, on génère le formulaire
+//        $form = $formBuilder->getForm();
+
 
 
         # Récupération des données
@@ -904,8 +915,8 @@ class ArticleController extends Controller
         // Validation
 
         # Redirection vers l'index
-        return $this->render('user/params.html.twig',[
-            'form' => $form->createView(),
+        return $this->render('index/index.html.twig',[
+
             'test'=> true,
         ]);
 

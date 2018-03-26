@@ -9,10 +9,6 @@
 
 /*------------------------------------ section side nav --------------------------------------------*/
 
-.hidden {
-    display : none;
-}
-
 
 body {
     background-image: linear-gradient(109.24244029308238deg, rgba(86, 216, 228,1) 6.140625%,rgba(154, 206, 149,1) 95.51562499999999%);
@@ -97,6 +93,16 @@ header, main, footer {
     text-align: center;
 }
 
+
+#filtre-container{
+    background-color: white;
+    border-radius: 10px;
+}
+
+#filtre-container form{
+    margin: 20px;
+}
+
 /*------------------------------------ section card page d'accueil --------------------------------------------*/
 body main #div-card{
     position: relative;
@@ -114,6 +120,14 @@ body .liste-plat #panier{
 body main .card-image{
 
     position: relative;
+    height: 300px;
+    background-position: center;
+    background-size: cover;
+}
+body main .card-image #img-plat{
+
+
+    object-fit: cover;
 }
 
 body main .cuisto{
@@ -202,4 +216,3 @@ body main .note{
 
 
 }
-

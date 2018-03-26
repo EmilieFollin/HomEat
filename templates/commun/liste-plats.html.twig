@@ -5,7 +5,7 @@
 <div class="liste-plat">
     <div class="row">
 
-        <div class="col s12 m6 l6 xl4" id="div-card" style="margin: 40px 0px 40px 0px">
+        <div class="col s12 m6 l6 xl4" id="div-card" style="margin: 30px 0px 30px 0px">
             <a class="btn-floating btn-large waves-effect waves-light" id="panier" href="{{ url("commande") }}"><i class="material-icons">shopping_cart</i></a>
             <div class="card">
                 <div class="card-image waves-effect waves-block waves-light">
@@ -76,6 +76,97 @@
 
                 </div>
             </div>
+        </div>
+        <div class="liste-plat">
+            <div class="row">
+                <div class="col s12 m6 l6 xl4" id="div-card" style="margin: 30px 0px 30px 0px">
+                    <a class="btn-floating btn-large waves-effect waves-light" href="{{ url("commande") }}" id="panier"><i class="material-icons">shopping_cart</i></a>
+                    <div class="card">
+                        <div class="card-image waves-effect waves-block waves-light activator" style=" background: url(https://imagesvc.timeincapp.com/v3/mm/image?url=http%3A%2F%2Fcdn-image.foodandwine.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F4_3_horizontal_inbody_900x506%2Fpublic%2F1502824044%2Froyal-farms-best-gas-station-food-FT-SS0817.jpg%3Fitok%3Dig79fdSU&w=700&q=85); background-position: center;
+    background-size: cover">
+
+                            <div class="cuisto">
+                                <a href="#!user">
+                                    <img id="profil-cuisto-card" class="circle" src="https://scontent-cdt1-1.xx.fbcdn.net/v/t1.0-1/c0.0.160.160/p160x160/20767735_1634982593192961_209014930482741611_n.jpg?oh=05cdc29ff8b2698d5d8c0927a15c5a51&oe=5B36D7D2">
+                                </a>
+                                <div class="note">
+                                    <i class="material-icons tiny">star</i>
+                                    <i class="material-icons tiny">star</i>
+                                    <i class="material-icons tiny">star</i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4 ">Nom du plat<i class="material-icons right small">add_circle</i></span>
+                            <span><p><a href="#"><em>2 Parts disponibles</em></a></p><a class="waves-effect waves-light btn right">3 euros/parts</a></span>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">Nom du plat<i class="material-icons right">close</i></span>
+
+                            <a href="#!user">
+                                <img style="width: 40px;" class="circle" src="https://scontent-cdt1-1.xx.fbcdn.net/v/t1.0-1/c0.0.160.160/p160x160/20767735_1634982593192961_209014930482741611_n.jpg?oh=05cdc29ff8b2698d5d8c0927a15c5a51&oe=5B36D7D2">
+                                Jerome Ballue   <em>3 étoiles</em></a>
+                            <br>
+                            <br>
+                            <div class="row">
+                                <div class="col s6">
+                                    <h6>Ingredients</h6>
+                                    <hr>
+                                    <ul>
+                                        <li>Mozzarela</li>
+                                        <li>Parmesan</li>
+                                        <li>Tomate</li>
+                                        <li>Oeufs</li>
+                                        <li>Riz</li>
+                                        <a href=""><li><em>Montrer plus ...</em></li></a>
+                                    </ul>
+                                </div>
+                                <div class="col s6">
+                                    <h6>Alèrgenes</h6>
+                                    <hr>
+                                    <ul>
+                                        <em>
+                                            <li>Cacahuètes</li>
+                                            <li>Lactose</li>
+                                            <li>Oeufs</li>
+
+                                        </em>
+
+                                    </ul>
+                                </div>
+                            </div>
+                            <div  style="background-color: rgba(176,176,176,0.16)">
+                                <div class="row">
+                                    <div class="col s8"> <strong><p>24 bis rue du champs des oiseaux, Rouen 76000</p></strong></div> <div class="col s4"><strong><p>DateTime</p></strong></div>
+                                </div>
+
+                            </div>
+
+
+
+
+                            <form action="">
+                                <div class="input-field col s12">
+                                    <select>
+                                        <option value="" disabled selected>Nombre de parts</option>
+                                        <option value="1">1 part</option>
+                                        <option value="2">2 parts</option>
+                                        <option value="3">3 parts</option>
+                                    </select>
+
+                                </div>
+                                <div class="col s12">
+                                    <button type="submit" class="waves-effect waves-light btn" style="width: 100%">Commander</button>
+                                </div>
+                            </form>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
 
     </div>
