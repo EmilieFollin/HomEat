@@ -4,10 +4,12 @@ namespace App\Controller;
 
 use App\Controller\Helper;
 use App\Entity\Address;
+use App\Entity\AddressHasUser;
 use App\Entity\Auteur;
 use App\Entity\CategoriesRecipes;
 use App\Entity\Orders;
 use App\Entity\Recipes;
+use App\Entity\Review;
 use App\Entity\Roles;
 use App\Entity\User;
 use Doctrine\DBAL\Types\DateType;
@@ -46,8 +48,7 @@ class ArticleController extends Controller
      * @Route("/signin", name="signin")
      */
 
-    public function signin(Request $request)
-    {
+    public function signin() {
 
         # Création d'un nouvel utilisateur
         $auteur = new User();
@@ -61,81 +62,18 @@ class ArticleController extends Controller
         $auteur->setRoles($role);
 
 
-        # Créer le formuaire permettant l'ajout d'un utilisateur
-        $form = $this->createFormBuilder($auteur)
-            ->add('name', TextType::class, [
-                'required' => true,
-                'label' => false,
-                'attr' => [
-                    'placeholder' => 'Entrez votre nom ...',
-                    'class' => 'form-control'
-                ]
-            ])
-            ->add('firstname', TextType::class, [
-                'required' => true,
-                'label' => false,
-                'attr' => [
-                    'placeholder' => 'Entrez votre prenom ...',
-                    'class' => 'form-control'
-                ]
-            ])
-            ->add('mail', TextType::class, [
-                'required' => true,
-                'label' => false,
-                'attr' => [
-                    'placeholder' => 'Entrez votre mail ...',
-                    'class' => 'form-control'
-                ]
-            ])
-            ->add('pass', TextType::class, [
-                'required' => true,
-                'label' => false,
-                'attr' => [
-                    'placeholder' => 'PASSWORD',
-                    'class' => 'form-control'
-                ]
-            ])
-            ->add('avatar', FileType::class, [
-                'required' => false,
-                'label' => false,
-                'attr' => [
-                    'class' => 'dropify'
-                ]
-            ])
-            ->add('submit', SubmitType::class, [
-                'label' => false,
-                'attr' => [
-                    'class' => 'btn btn-danger'
-                ]
-            ])
-            ->getForm();
-
-        # Traitement des données POST
-        $form->handleRequest($request);
-
         # Vérification des données du Formulaire
-        if ($form->isSubmitted() && $form->isValid()) :
+        if (isset($_POST['form']) && $_POST['form']['pass'] === $_POST['confirmation-pass']) :
             # Récupération des données
-            $auteur = $form->getData();
+            $auteur->setMail($_POST['form']['mail']);
+            $auteur->setFirstname($_POST['form']['firstname']);
+            $auteur->setName($_POST['form']['name']);
+            $auteur->setPass($_POST['form']['pass']);
 
-            # Récupération de l'image
-            $image = $auteur->getAvatar();
+            $auteur->setAvatar('images/avatars/default_avatar.jpg');
+            $auteur->setFirstname('');
 
-            # String Aléatoire
-            $chaine = rand(1000000, 99999999);
-
-            # Nom du fichier
-            $fileName = $chaine . '.' . $image->guessExtension();
-
-            dump($this);
-            //die();
-
-            $image->move(
-                $this->getParameter('avatars'),
-                $fileName
-            );
-
-            $auteur->setAvatar('images/avatars/' . $fileName);
+            dump($auteur);
 
             # Insertion en BDD
             $em = $this->getDoctrine()->getManager();
@@ -143,23 +81,75 @@ class ArticleController extends Controller
             $em->flush();
 
             # Récupération des variables de session
-            if (!isset($session)) {
-                $session = new Session();
-            }
+            if(!isset($session)) {$session = new Session();}
 
             $session->set('userName', $auteur->getFirstname() . ' ' . $auteur->getName());
-            $session->set('userId', $auteur->getId());
-            $session->set('template', 'template-01');
-
-            return $this->redirectToRoute('index');
-
+            $session->set('userId',$auteur->getId());
+            $session->set('template','template-01');
         endif;
 
-        # Affichage du Formulaire dans la Vue
-        return $this->render('user/signin.html.twig', [
-            'form' => $form->createView()
-        ]);
+        return $this->redirectToRoute('index');
     }
+
+
+    //////////////////////////////////////////////////////////////////
+    // ---------------------------------------------------- Add User
+    //////////////////////////////////////////////////////////////////
+
+
+    /**
+     * Paramètre
+     * @Route("/add-user", name="addUser")
+     */
+
+
+    public function addUser(Request $request)
+    {
+
+        //////Ajout d'un User/////
+
+        # Création d'un nouvel utilisateur
+        $auteur = new User();
+
+
+        # Vérification des données du Formulaire
+        if (true) :
+
+            dump($_POST);
+
+            # Récupération des données
+            # Récupération des données
+            $auteur->setMail($_POST['form']['mail']);
+            $auteur->setName($_POST['form']['name']);
+            $auteur->setPass($_POST['form']['pass']);
+
+            $auteur->setAvatar('images/avatars/default_avatar.jpg');
+            $auteur->setFirstname('');
+
+
+            # Insertion en BDD
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($auteur);
+            $em->flush();
+
+
+            # Redirection vers l'index
+            return $this->render('index/index.html.twig', []);
+        else :
+            # Affichage de la Vue
+            return $this->render('user/params.html.twig', [
+                'form' => $form->createView(),
+                'test'=> true,
+            ]);
+        endif;
+
+        return $this->redirectToRoute('index');
+
+    }
+
+
+
+
 
 
 
@@ -742,33 +732,33 @@ class ArticleController extends Controller
         $form = $formBuilder->getForm();
 
 
-        # Traitement des données POST
-        $form->handleRequest($request);
-
-        # Vérification des données du Formulaire
-        if ($form->isSubmitted()) :
-
-            # Récupération des données
-            $address = $form->getData();
-
-            dump($this);
-            //die();
-
-            # Insertion en BDD
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($address);
-            $em->flush();
-
-
-            # Redirection vers l'index
-            return $this->render('index/index.html.twig', []);
-        else :
-            # Affichage de la Vue
-            return $this->render('user/params.html.twig', [
-                'form' => $form->createView(),
-                'test'=> true,
-            ]);
-        endif;
+//        # Traitement des données POST
+//        $form->handleRequest($request);
+//
+//        # Vérification des données du Formulaire
+//        if ($form->isSubmitted()) :
+//
+//            # Récupération des données
+//            $address = $form->getData();
+//
+//            dump($this);
+//            //die();
+//
+//            # Insertion en BDD
+//            $em = $this->getDoctrine()->getManager();
+//            $em->persist($address);
+//            $em->flush();
+//
+//
+//            # Redirection vers l'index
+//            return $this->render('index/index.html.twig', []);
+//        else :
+//            # Affichage de la Vue
+//            return $this->render('user/params.html.twig', [
+//                'form' => $form->createView(),
+//                'test'=> true,
+//            ]);
+//        endif;
 
         return $this->render('user/params.html.twig',[
             'form' => $form->createView(),
@@ -797,12 +787,22 @@ class ArticleController extends Controller
 
         // On crée une nouvelle address
         $address = new Address();
+        $addressHasUser = new AddressHasUser();
 
 
         # Vérification des données du Formulaire
         if (true) :
 
-            dump($_POST);
+            # Récupération des variables de session
+            $session = $this->get('session');
+
+            # Récupération de l'ID de l'auteur
+            $auteurId = $session->get('userId');
+
+            # Recherche de l'Auteur de la recette
+            $auteur = $this->getDoctrine()
+                ->getRepository(User::class)
+                ->find($auteurId);
 
             # Récupération des données
         $address->setStreet($_POST['form']['street']);
@@ -817,6 +817,17 @@ class ArticleController extends Controller
             $em->persist($address);
             $em->flush();
 
+
+            // ADDRESS HAS USER
+
+        $addressHasUser->setUser($auteur);
+        $addressHasUser->setAddress($address);
+            $addressHasUser->setName('Home');
+
+            # Insertion en BDD
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($addressHasUser);
+            $em->flush();
 
             # Redirection vers l'index
             return $this->render('index/index.html.twig', []);
@@ -834,6 +845,73 @@ class ArticleController extends Controller
         ]);
     }
 
+
+
+
+
+
+
+
+                //////////////////////////////////////////////////////////////////
+              // ---------------------------------------------------- sendReview
+            //////////////////////////////////////////////////////////////////
+
+
+
+
+    /**
+     * Page permettant d'envoyer un message
+     * @Route("/sendReview/{user1}/{user2}",
+     *     name="sendReview",
+     *     requirements={"user1" = "\d+"},
+     *     methods={"GET"})
+     * @param integer $user1
+     * @param integer $user2
+     * @return Response
+     */
+
+    public function sendReview($user1, $user2)
+    {
+        $review = new Review();
+
+        // On récupère nos deux utilisateurs
+        $emissaire = $this->getDoctrine()
+            ->getRepository(User::class)
+            ->find($user1);
+
+        $destinataire = $this->getDoctrine()
+            ->getRepository(User::class)
+            ->find($user2);
+
+        $review->setUser1($emissaire);
+        $review->setuser2($destinataire);
+
+
+     
+
+
+        # Récupération des données
+        $review->setComments($_POST['form']['comments']);
+        $review->setNotes($_POST['form']['notes']);
+
+        // Fin de form
+
+        # Insertion en BDD
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($review);
+        $em->flush();
+
+        // Validation
+
+        # Redirection vers l'index
+        return $this->render('user/params.html.twig',[
+            'form' => $form->createView(),
+            'test'=> true,
+        ]);
+
+
+
+    }
 
 
 }
