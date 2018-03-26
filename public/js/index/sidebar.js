@@ -67,44 +67,14 @@ $(function() {
 
 
 
-
-    $('#inscription').click(function(){
-
-        $( "div.background" ).replaceWith( "<div class=\"background-connexion\">\n" +
-            "            <form action=\"\">\n" +
-            "                <div class=\"row\" id=\"row-connexion\">\n" +
-            "                    <div class=\"input-field col s12\">\n" +
-            "                        <input id=\"email\" type=\"email\" class=\"validate\">\n" +
-            "                        <label for=\"email\">Email</label>\n" +
-            "                    </div>\n" +
-            "                </div>\n" +
-            "                <div class=\"row\" id=\"row-connexion\">\n" +
-            "                    <div class=\"input-field col s12\">\n" +
-            "                        <input id=\"password\" type=\"password\" class=\"validate\">\n" +
-            "                        <label for=\"password\">Password</label>\n" +
-            "                    </div>\n" +
-            "                </div>\n" +
-            "                <button class=\"btn waves-effect waves-light submit-login\"  type=\"submit\" name=\"action\">Inscription\n" +
-            "\n" +
-            "                </button>\n" +
-            "            </form>\n" +
-            "        </div>" );
-
-
-
-
-        $('.submit-login').click(function(e) {
-            e.preventDefault()
-            location.href = "http://localhost:8000/signin"
-        })
-    });
-
-
-
     $('#inscription').click(function(){
         document.getElementById("overlay").style.display = "block";
     });
     $('#overlay-off').click(function(){
         document.getElementById("overlay").style.display = "none";
-    })
+    });
+    $(document).ready(function(){
+        // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+        $('.modal').modal();
+    });
 })

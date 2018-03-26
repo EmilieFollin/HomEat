@@ -22,13 +22,13 @@
 
     {# ---------------------------------------------------------------------------------------------- #}
 
-                                            {#   CSS   #}
+    {#   CSS   #}
 
-                                  {#   ***  ***  ***  ***  ***   #}
+    {#   ***  ***  ***  ***  ***   #}
 
     {% if app.session.get('template') is not null  %}
 
-            <!-- CSS PERSO => TEMPLATES -->
+        <!-- CSS PERSO => TEMPLATES -->
         <link href="{{ asset('css/templates/'~app.session.get('template')~'/_navbar.css') }}" rel="stylesheet" />
         <link href="{{ asset('css/templates/'~app.session.get('template')~'/_slidebar.css') }}" rel="stylesheet" />
         <link href="{{ asset('css/templates/'~app.session.get('template')~'/index.css') }}" rel="stylesheet" />
@@ -36,17 +36,18 @@
 
     {% else %}
 
-            <!-- CSS PAR DEFAUT => TEMPLATE-01 -->
+        <!-- CSS PAR DEFAUT => TEMPLATE-01 -->
         <link href="{{ asset('css/templates/template-01/_navbar.css') }}" rel="stylesheet" />
         <link href="{{ asset('css/templates/template-01/_slidebar.css') }}" rel="stylesheet" />
         <link href="{{ asset('css/templates/template-01/index.css') }}" rel="stylesheet" />
         <link href="{{ asset('css/templates/template-01/alakazam.css') }}" rel="stylesheet" />
 
+
     {% endif %}
 
 
-        <link href="{{ asset('css/templates/template-01/style.css') }}" rel="stylesheet">
-
+    <link href="{{ asset('css/templates/template-01/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/templates/template-01/editor.css') }}" rel="stylesheet" />
 
 
     {# ---------------------------------------------------------------------------------------------- #}
@@ -104,6 +105,7 @@
     <script src="{{ asset('js/index/editor.js') }}"></script>
     <script src="{{ asset('js/index/_navbar.js') }}"></script>
     <script src="{{ asset('js/index/sidebar.js') }}"></script>
+    <script src="{{ asset('js/index/auteur.js') }}"></script>
 
     {# --------------------------------------------------------------------------------- #}
 {% endblock %}

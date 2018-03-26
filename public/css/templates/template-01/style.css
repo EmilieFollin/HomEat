@@ -1,3 +1,4 @@
+
 /* coleur mcdo
  jaune #f9df19
  rouge #d52b1e
@@ -79,6 +80,18 @@ header, main, footer {
     margin: 0 auto;
 }
 
+.list-inline {
+    padding-left: 0;
+    margin-left: -5px;
+    list-style: none;
+
+}
+.list-inline > li {
+    display: inline-block;
+    padding-right: 5px;
+    padding-left: 5px;
+    text-align: center;
+}
 
 /*------------------------------------ section card page d'accueil --------------------------------------------*/
 body main #div-card{
@@ -161,3 +174,28 @@ body main .note{
     z-index: 5; /* Specify a stack order in case you're using a different order for other elements */
     cursor: pointer; /* Add a pointer on hover */
 }
+
+
+/* --------------------------------------------------------- auteur ------------------------------------------*/
+
+.box-auteur{
+    border-radius: 20px;
+    display: flex;
+
+
+}
+
+.box-auteur hr {
+    margin-bottom: 15px;
+    margin-top: 0px;
+}
+
+/*------------------------------------------------------------ commentaire sur page auteur -------------------*/
+
+.un-commentaire{
+    background-color: white;
+    border-radius: 10px;
+
+
+}
+

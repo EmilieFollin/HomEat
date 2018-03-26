@@ -50,7 +50,7 @@ class Recipes
 
     /**
      * @return mixed
-     * @ORM\Column(type="time")
+     * @ORM\Column(type="string", length=20)
      */
     private $hour;
 

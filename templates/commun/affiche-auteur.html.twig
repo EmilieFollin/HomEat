@@ -5,53 +5,173 @@
 {% endblock %}
 
 {% block content %}
-    <div class="row contenu">
+    <div class="row">
 
 
 
-    {#       --------------------------------------------------------      #}
+        {#       --------------------------------------------------------      #}
 
 
-            {#         CONTENU PRINCIPAL DE AUTEUR       #}
+        {#         CONTENU PRINCIPAL DE AUTEUR       #}
 
 
-    <div class="auteur-container">
-        <div class="auteur-nom"> {{ auteur.firstname }} {{ auteur.name }} </div>
-        <div class="image-container">
-            <div class="image"><img src="{{ auteur.avatar }}"></div>
+
+
+        <div class="row">
+            <div class="container">
+
+                <div class="box-auteur col s12 m12 z-depth-3" id="box-auteur" style="background-color: white">
+
+
+                    <div class="col s12 m6" style="padding-bottom: 40px; border-right: 1px solid rgba(128,128,128,0.16)">
+
+                        <img style="width: 30%; padding: 10px;" src="https://scontent-cdt1-1.xx.fbcdn.net/v/t1.0-9/23795538_1650975411690508_364041306487306684_n.jpg?_nc_cat=0&oh=2322e6a982435ed2c7a7093fa557cdcd&oe=5B73C98E" class="circle img-responsive" alt="photo de profil auteur">
+
+                        <h5>Nom de l'auteur</h5>
+                        <br>
+
+                        <div class="col s12">
+                            <p>Ici vous pouvez trouvez l'email</p>
+
+                            <hr>
+                        </div>
+
+
+                        <div class="col s12">
+                            <p>Ici vous pouvez trouver la note</p>
+
+                            <hr>
+                        </div>
+
+                        <div class="col s12">
+                            <p>ici vous pouvez trouver le niveau d'exp</p>
+
+                            <hr>
+                        </div>
+
+                        <div class="col s12">
+                            <p>ici vous pouvez trouver le plat le plus populaire</p>
+
+                            <hr>
+                        </div>
+
+
+                        <div class="col s12">
+                            <p>ici vous pouvez trouver une bio ecrite par l'auteur</p>
+
+                            <hr>
+                        </div>
+
+
+
+
+
+
+                    </div>
+                    <div class="col s2 m6" id="right-panel-message">
+
+                        <div class="col s12" style="background-color: rgba(128,128,128,0.05); margin-top:10px; overflow: auto; max-height:500px;">
+
+                            <div class="container">
+                                <div class="col s12 z-depth-2 un-commentaire" style="margin: 5px;">
+                                    <span><img style="width: 15%; padding: 5px;" src="https://scontent-cdt1-1.xx.fbcdn.net/v/t1.0-9/23795538_1650975411690508_364041306487306684_n.jpg?_nc_cat=0&oh=2322e6a982435ed2c7a7093fa557cdcd&oe=5B73C98E" class="circle img-responsive" alt="photo de profil commentaire"> <em> Nom du commentateur </em></span>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium aut distinctio ducimus hic ipsam, laboriosam, magni necessitatibus neque numquam obcaecati officiis quidem quod voluptas voluptatibus? Corporis modi nesciunt reprehenderit!</p>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="col s12 z-depth-2 un-commentaire" style="margin: 5px;">
+                                    <span><img style="width: 15%; padding: 5px;" src="https://scontent-cdt1-1.xx.fbcdn.net/v/t1.0-9/23795538_1650975411690508_364041306487306684_n.jpg?_nc_cat=0&oh=2322e6a982435ed2c7a7093fa557cdcd&oe=5B73C98E" class="circle img-responsive" alt="photo de profil commentaire"> <em> Nom du commentateur </em></span>
+                                    <p>neque numquam obcaecati officiis quidem quod voluptas voluptatibus? Corporis modi nesciunt reprehenderit!</p>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="col s12 z-depth-2 un-commentaire" style="margin: 5px;">
+                                    <span><img style="width: 15%; padding: 5px;" src="https://scontent-cdt1-1.xx.fbcdn.net/v/t1.0-9/23795538_1650975411690508_364041306487306684_n.jpg?_nc_cat=0&oh=2322e6a982435ed2c7a7093fa557cdcd&oe=5B73C98E" class="circle img-responsive" alt="photo de profil commentaire"> <em> Nom du commentateur </em></span>
+                                    <p>neque numquam obcaecati officiis quidem quod voluptas voluptatibus? Corporis modi nesciunt reprehenderit!</p>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="col s12 z-depth-2 un-commentaire" style="margin: 5px;">
+                                    <span><img style="width: 15%; padding: 5px;" src="https://scontent-cdt1-1.xx.fbcdn.net/v/t1.0-9/23795538_1650975411690508_364041306487306684_n.jpg?_nc_cat=0&oh=2322e6a982435ed2c7a7093fa557cdcd&oe=5B73C98E" class="circle img-responsive" alt="photo de profil commentaire"> <em> Nom du commentateur </em></span>
+                                    <p>neque numquam obcaecati officiis quidem quod voluptas voluptatibus? Corporis modi nesciunt reprehenderit!</p>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+
+                        <div class="row">
+                            <form class="col s12">
+                                <div class="row">
+                                    <div class="input-field col s12 valign-wrapper">
+                                        <i class="material-icons prefix">mode_edit</i>
+                                        <textarea id="icon_prefix2" class="materialize-textarea" data-length="140" maxlength="140"></textarea>
+                                        <label for="icon_prefix2">Votre commentaire</label>
+                                        <a class="btn-floating btn waves-effect waves-light"><i class="material-icons">send</i></a>
+                                    </div>
+
+                                </div>
+                            </form>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+
+
+
+            </div>
         </div>
 
-        <div class="informations-container"></div>
 
-        <div class="suggestions-container">
-            <div class="suggestions-titre"></div>
-        </div>
+
+
+
+
+
+
+
+        {##}
+        {#<div class="auteur-container">#}
+        {#<div class="auteur-nom"> {{ auteur.name }} {{ auteur.firstname }}</div>#}
+        {#<div class="image-container">#}
+        {#<div class="image"><img src="{{ auteur.avatar }}"></div>#}
+        {#</div>#}
+
+        {#<div class="informations-container"></div>#}
+
+        {#<div class="suggestions-container">#}
+        {#<div class="suggestions-titre"></div>#}
+        {#</div>#}
+
+        {#</div>#}
+
+        {#<div class="reviews-container">#}
+        {#{% for review in reviews %}#}
+        {#<div class="review-container">#}
+        {#<div class="avatar-container">#}
+        {#<div class="avatar"></div>#}
+        {#<div class="review-auteur"></div>#}
+        {#</div>#}
+        {#<div class="review">#}
+        {#<div class="review-content"></div>#}
+        {#<div class="review-note"></div>#}
+        {#</div>#}
+        {#</div>#}
+        {#{% endfor %}#}
+        {#</div>#}
+
+
+
+        {#       END CONTENU PRINCIPAL DE AUTEUR     #}
+
+
+        {#       --------------------------------------------------------      #}
 
     </div>
-
-
-    {#<div class="reviews-container">#}
-        {#{% for review in reviews %}#}
-            {#<div class="review-container">#}
-                {#<div class="avatar-container">#}
-                    {#<div class="avatar"></div>#}
-                    {#<div class="review-auteur"></div>#}
-                {#</div>#}
-                {#<div class="review">#}
-                    {#<div class="review-content"></div>#}
-                    {#<div class="review-note"></div>#}
-                {#</div>#}
-            {#</div>#}
-        {#{% endfor %}#}
-    {#</div>#}
-
-
-
-            {#       END CONTENU PRINCIPAL DE AUTEUR     #}
-
-
-    {#       --------------------------------------------------------      #}
-
-
 
 {% endblock %}
