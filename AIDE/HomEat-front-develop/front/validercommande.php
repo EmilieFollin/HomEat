@@ -68,130 +68,48 @@
 <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
 
 <main>
-    <!-- ---------------------------------- filtre accueil---------------------------------- -->
     <div class="container">
-        <div class="image-plats-commander col s12">
-        <div class="button2">
-            <a href="!#" class="waves-effect waves-light btn-large z-depth-3" id="button2">Mettez en vente votre nouveau plat :)</a>
-        </div>
-        </div>
 
-        <div class="ajoutplats col s12 z-depth-3">
-            <div class="row  valign-wrapper">
-                <div class="col s2"><img class="responsive-img " src="https://www.rd.com/wp-content/uploads/2017/10/12_Citrus_Healthy-Holiday-Food-Gifts-Instead-of-Fruit-Cake_524210419-ch_ch.jpg" id="logo2"></div>
-                <div class="col s2">
-                    <p>Nom du plat</p>
+    <div class="row">
+        
 
-                </div>
-                <div class="col s2">
-                    <p><em>Ingrédient :</em></p>
-                </div>
-                <div class="col s2">
-                    <p> <a class="btn-floating btn-large waves-effect waves-light blue" style="font-size: 0.7em">2/parts</a></p>
-                </div>
-                <div class="col s2">
-                    <p>Heure</p>
-                </div>
-                <div class="col s2">
-                    <p> <a class="btn-floating btn-large waves-effect waves-light green" style="font-size: 0.7em">2€</a></p>
-                </div>
+
+
+                <div class="image-plats-commander col s12">
+
+                    <h1>Valider ma commande</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+        <div class="row">
+        
+        <div class="information-commande">
+            
+            <div class="col s4">
+                <img style="width: 100%" src="https://cac.img.pmdstatic.net/fit/http.3A.2F.2Fwww.2Ecuisineactuelle.2Efr.2Fvar.2Fcui.2Fstorage.2Fimages.2Frecettes-de-cuisine.2Fplat.2Flasagnes.2Flasagnes-a-la-viande-de-boeuf-hachee-205604.2F1263183-2-fre-FR.2Flasagnes-a-la-viande-de-boeuf-hachee.2Ejpg/737x415/quality/80/crop-from/center/lasagnes-a-la-viande-de-boeuf-hachee.jpeg" alt="" class="reponsive-img">
             </div>
-            <a class="waves-effect waves-light btn button-remettre">Remettre ce plat en vente</a>
-
-        </div>
-        <div class="ajoutplats col s12 z-depth-3">
-            <div class="row  valign-wrapper">
-                <div class="col s2"><img class="responsive-img " src="https://www.rd.com/wp-content/uploads/2017/10/12_Citrus_Healthy-Holiday-Food-Gifts-Instead-of-Fruit-Cake_524210419-ch_ch.jpg" id="logo2"></div>
-                <div class="col s2">
-                    <p>Nom du plat</p>
-
-                </div>
-                <div class="col s2">
-                    <p><em>Ingrédient :</em></p>
-                </div>
-                <div class="col s2">
-                    <p> <a class="btn-floating btn-large waves-effect waves-light blue" style="font-size: 0.7em">2/parts</a></p>
-                </div>
-                <div class="col s2">
-                    <p>Heure</p>
-                </div>
-                <div class="col s2">
-                    <p> <a class="btn-floating btn-large waves-effect waves-light green" style="font-size: 0.7em">2€</a></p>
-                </div>
-            </div>
-            <a class="waves-effect waves-light btn button-remettre">Remettre ce plat en vente</a>
-
+            
+            
         </div>
 
-        <div class="ajoutplats col s12 z-depth-3">
-            <div class="row  valign-wrapper">
-                <div class="col s2"><img class="responsive-img " src="https://www.rd.com/wp-content/uploads/2017/10/12_Citrus_Healthy-Holiday-Food-Gifts-Instead-of-Fruit-Cake_524210419-ch_ch.jpg" id="logo2"></div>
-                <div class="col s2">
-                    <p>Nom du plat</p>
-
-                </div>
-                <div class="col s2">
-                    <p><em>Ingrédient :</em></p>
-                </div>
-                <div class="col s2">
-                    <p> <a class="btn-floating btn-large waves-effect waves-light blue" style="font-size: 0.7em">2/parts</a></p>
-                </div>
-                <div class="col s2">
-                    <p>Heure</p>
-                </div>
-                <div class="col s2">
-                    <p> <a class="btn-floating btn-large waves-effect waves-light green" style="font-size: 0.7em">2€</a></p>
-                </div>
-            </div>
-            <a class="waves-effect waves-light btn button-remettre">Remettre ce plat en vente</a>
-
         </div>
-
-
-
+    </div>
     </div>
 
-    <!-- ---------------------------------- liste des plats disponibles ---------------------------------- -->
 </main>
 
 
 
-<div class="row">
-
-    <div class="col s2 offset-s12 z-depth-3"id="sidebar">
-        <img src="https://i.imgur.com/LZUvLF5.png" alt="" class="circle responsive-img" id="logo"> <!-- notice the "circle" class -->
-        <div class="meilleurcuisto" id="meilleur" >
-            <h5> Top <i class="small material-icons">looks_one</i> : </h5>
-            <p>
-                CONTENU :
-                WWWWWWWWWWWW
-                WWWWWWWWWWWW
-                WWWWWWWWWWWW
-                WWWWWWWWWWWW
-                WWWWWWWWWWWW
-            </p>
-        </div>
-        <div class="recettedumoment" id="recette">
-
-            <h5> LA Recette <i class="small material-icons">restaurant_menu</i> </h5>
-            <p> retouver ici la recette du moment en détail et leurs créateurs</p>
-            <p>wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
-                wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
-                wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwws
-                wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
-                wwwwwwwwwwwwbitewwwwwwwwwwwbitewwwwwwwwwwwww
-            </p>
-
-        </div>
-
-
-
-
-    </div>
-
-
-
-</div>
 
 
 
@@ -264,6 +182,10 @@
     $('#overlay-off').click(function(){
         document.getElementById("overlay").style.display = "none";
     })
+
+    $(document).ready(function() {
+        $('textarea#icon_prefix2').characterCounter();
+    });
 
 
 

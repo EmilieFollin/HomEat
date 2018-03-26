@@ -70,56 +70,9 @@
 <main>
     <!-- ---------------------------------- filtre accueil---------------------------------- -->
     <div class="container">
-        <div class="image-plats-commander col s12">
-        <div class="button2">
-            <a href="!#" class="waves-effect waves-light btn-large z-depth-3" id="button2">Mettez en vente votre nouveau plat :)</a>
-        </div>
-        </div>
+        <div class="image-plats-commander responsive-img col s12">
 
-        <div class="ajoutplats col s12 z-depth-3">
-            <div class="row  valign-wrapper">
-                <div class="col s2"><img class="responsive-img " src="https://www.rd.com/wp-content/uploads/2017/10/12_Citrus_Healthy-Holiday-Food-Gifts-Instead-of-Fruit-Cake_524210419-ch_ch.jpg" id="logo2"></div>
-                <div class="col s2">
-                    <p>Nom du plat</p>
-
-                </div>
-                <div class="col s2">
-                    <p><em>Ingrédient :</em></p>
-                </div>
-                <div class="col s2">
-                    <p> <a class="btn-floating btn-large waves-effect waves-light blue" style="font-size: 0.7em">2/parts</a></p>
-                </div>
-                <div class="col s2">
-                    <p>Heure</p>
-                </div>
-                <div class="col s2">
-                    <p> <a class="btn-floating btn-large waves-effect waves-light green" style="font-size: 0.7em">2€</a></p>
-                </div>
-            </div>
-            <a class="waves-effect waves-light btn button-remettre">Remettre ce plat en vente</a>
-
-        </div>
-        <div class="ajoutplats col s12 z-depth-3">
-            <div class="row  valign-wrapper">
-                <div class="col s2"><img class="responsive-img " src="https://www.rd.com/wp-content/uploads/2017/10/12_Citrus_Healthy-Holiday-Food-Gifts-Instead-of-Fruit-Cake_524210419-ch_ch.jpg" id="logo2"></div>
-                <div class="col s2">
-                    <p>Nom du plat</p>
-
-                </div>
-                <div class="col s2">
-                    <p><em>Ingrédient :</em></p>
-                </div>
-                <div class="col s2">
-                    <p> <a class="btn-floating btn-large waves-effect waves-light blue" style="font-size: 0.7em">2/parts</a></p>
-                </div>
-                <div class="col s2">
-                    <p>Heure</p>
-                </div>
-                <div class="col s2">
-                    <p> <a class="btn-floating btn-large waves-effect waves-light green" style="font-size: 0.7em">2€</a></p>
-                </div>
-            </div>
-            <a class="waves-effect waves-light btn button-remettre">Remettre ce plat en vente</a>
+            <h1>Les plats que j'ai commandé.ée</h1>
 
         </div>
 
@@ -143,7 +96,54 @@
                     <p> <a class="btn-floating btn-large waves-effect waves-light green" style="font-size: 0.7em">2€</a></p>
                 </div>
             </div>
-            <a class="waves-effect waves-light btn button-remettre">Remettre ce plat en vente</a>
+            <a class="waves-effect waves-light btn button-remettre disabled">Commander le 21/02/18</a>
+
+        </div>
+        <div class="ajoutplats col s12 z-depth-3">
+            <div class="row  valign-wrapper">
+                <div class="col s2"><img class="responsive-img " src="https://www.rd.com/wp-content/uploads/2017/10/12_Citrus_Healthy-Holiday-Food-Gifts-Instead-of-Fruit-Cake_524210419-ch_ch.jpg" id="logo2"></div>
+                <div class="col s2">
+                    <p>Nom du plat</p>
+
+                </div>
+                <div class="col s2">
+                    <p><em>Ingrédient :</em></p>
+                </div>
+                <div class="col s2">
+                    <p> <a class="btn-floating btn-large waves-effect waves-light blue" style="font-size: 0.7em">2/parts</a></p>
+                </div>
+                <div class="col s2">
+                    <p>Heure</p>
+                </div>
+                <div class="col s2">
+                    <p> <a class="btn-floating btn-large waves-effect waves-light green" style="font-size: 0.7em">2€</a></p>
+                </div>
+            </div>
+            <a class="waves-effect waves-light btn button-remettre disabled">Commander le 24/02/18</a>
+
+        </div>
+
+        <div class="ajoutplats col s12 z-depth-3">
+            <div class="row  valign-wrapper">
+                <div class="col s2"><img class="responsive-img " src="https://www.rd.com/wp-content/uploads/2017/10/12_Citrus_Healthy-Holiday-Food-Gifts-Instead-of-Fruit-Cake_524210419-ch_ch.jpg" id="logo2"></div>
+                <div class="col s2">
+                    <p>Nom du plat</p>
+
+                </div>
+                <div class="col s2">
+                    <p><em>Ingrédient :</em></p>
+                </div>
+                <div class="col s2">
+                    <p> <a class="btn-floating btn-large waves-effect waves-light blue" style="font-size: 0.7em">2/parts</a></p>
+                </div>
+                <div class="col s2">
+                    <p>Heure</p>
+                </div>
+                <div class="col s2">
+                    <p> <a class="btn-floating btn-large waves-effect waves-light green" style="font-size: 0.7em">2€</a></p>
+                </div>
+            </div>
+            <a class="waves-effect waves-light btn button-remettre disabled">Commander le 21/02/18</a>
 
         </div>
 
@@ -158,29 +158,35 @@
 
 <div class="row">
 
-    <div class="col s2 offset-s12 z-depth-3"id="sidebar">
+    <div class="col s2 offset-s12 z-depth-3 hide-on-med-and-down"id="sidebar">
         <img src="https://i.imgur.com/LZUvLF5.png" alt="" class="circle responsive-img" id="logo"> <!-- notice the "circle" class -->
         <div class="meilleurcuisto" id="meilleur" >
-            <h5> Top <i class="small material-icons">looks_one</i> : </h5>
-            <p>
-                CONTENU :
-                WWWWWWWWWWWW
-                WWWWWWWWWWWW
-                WWWWWWWWWWWW
-                WWWWWWWWWWWW
-                WWWWWWWWWWWW
-            </p>
+            <h4 style="text-align: center;"> Top <i class="small material-icons">looks_one</i></h4>
+            <h4>Les lasagnes au saumon de Frederic</h4>
+            <div style=" width: 100%;">
+                <a href="">
+                    <img  style=" width: 100%;" class="responsive-img z-depth-1" src="https://www.enviedebienmanger.fr/sites/default/files/styles/bandeau_recette/public/lasagnes_de_saumon_aux_asperges_0.png?itok=kkV2Ct4W" alt="">
+                </a>
+
+            </div>
+
         </div>
         <div class="recettedumoment" id="recette">
 
-            <h5> LA Recette <i class="small material-icons">restaurant_menu</i> </h5>
-            <p> retouver ici la recette du moment en détail et leurs créateurs</p>
-            <p>wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
-                wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
-                wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwws
-                wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
-                wwwwwwwwwwwwbitewwwwwwwwwwwbitewwwwwwwwwwwww
-            </p>
+            <h4 style="text-align: center;"> LA Recette <i class="small material-icons">restaurant_menu</i> </h4>
+            <h5> retouver ici les recettes du moment en détail et leurs créateurs</h5>
+            <div style=" width: 100%;">
+                <a href="" class="tooltipped" data-position="left" data-tooltip="Le gatin dauphinois d'Emily">
+                    <img  style=" width: 100%;" class="responsive-img z-depth-1" src="https://cac.img.pmdstatic.net/fit/http.3A.2F.2Fwww.2Ecuisineactuelle.2Efr.2Fvar.2Fcui.2Fstorage.2Fimages.2Frecettes-de-cuisine.2Frecettes-pour-tous.2Ffamiliale.2Fgratin-dauphinois-traditionnel.2F1089980-2-fre-FR.2Fgratin-dauphinois-traditionnel.2Ejpg/748x372/quality/80/crop-from/center/gratin-dauphinois-traditionnel.jpeg" alt="">
+                </a>
+
+
+            </div>
+            <div style=" width: 100%;">
+                <a href="" class="tooltipped" data-position="left" data-tooltip="Le poulet coco de Terry">
+                    <img  style=" width: 100%;" class="responsive-img z-depth-1" src="https://www.cookomix.com/wp-content/uploads/2016/06/poulet-coco-3-epices-800x600.jpg" alt="">
+                </a>
+            </div>
 
         </div>
 

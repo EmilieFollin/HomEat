@@ -38,13 +38,13 @@
                     <div class="row">
                     <div class="form-group">
                         {# Prix de la recette #}
-                        <div class="input-field col s4">
+                        <div class="input-field col s12 m3">
                             {{ form_row(form.price) }}
                         </div>
-                        <input id="heure-debut" type="text" class="timepicker col s4">
-                        <label for="heure-debut" class="">C'est quand qu'on mange</label>
-                        <input id="heure-fin" type="text" class="timepicker col s4">
-                        <label for="heure-fin" class="">C'est froid</label>
+                        <input id="heure-debut" type="text" class="timepicker col s12 m3">
+                        <label for="heure-debut" class="">Heure de début</label>
+                        <input id="heure-fin" type="text" class="timepicker col s12 m3">
+                        <label for="heure-fin" class="">Heure de fin</label>
                     </div>
                         {# Categorie de la recette #}
                         {#
@@ -78,8 +78,10 @@
 
                     {# Submit #}
                     <div class="form-group">
-                        <div class="col-xs-7 col-xs-offset-3">
-                             {{ form_widget(form.submit, { 'label': 'Click me' }) }}
+                        <div class="container">
+                        <div class="col s7">
+                             {{ form_widget(form.submit, { 'label': 'Mettre en vente' }) }}
+                        </div>
                         </div>
                     </div>
 
