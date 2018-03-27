@@ -18,13 +18,6 @@ class Orders
     private $id;
 
 
-
-
-    /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Review", cascade={"persist"})
-     */
-    private $reviews;
-
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Status", inversedBy="orders")
      */

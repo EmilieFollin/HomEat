@@ -20,7 +20,7 @@
 {{ render(controller('App\\Controller\\IndexController::menu')) }}
 
 {#  NavBarr #}
-{{ render(controller('App\\Controller\\IndexController::navbar')) }}
+{#{{ render(controller('App\\Controller\\IndexController::navbar')) }}#}
 
 
 
@@ -37,17 +37,22 @@
 
 
 
-
     {#                SLIDEBAR                  #}
 
 
 </main>
 
+
+
 {# Sidebar #}
 {{ render(controller('App\\Controller\\IndexController::sidebar')) }}
 
 {# Sidebar Left #}
+<<<<<<< HEAD
 {#{{ render(controller('App\\Controller\\IndexController::sidebarleft')) }}#}
+=======
+{{ render(controller('App\\Controller\\IndexController::sidebarleft')) }}
+>>>>>>> 586da1abec230fc4e08c12145c623e0cf525dcae
 
 
 

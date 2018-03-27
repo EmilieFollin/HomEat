@@ -27,6 +27,16 @@ class Review
     private $notes;
 
     /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", cascade={"persist"})
+     */
+    private $user1;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", cascade={"persist"})
+     */
+    private $user2;
+
+    /**
      * @return mixed
      */
     public function getComments()
@@ -62,4 +72,38 @@ class Review
     {
         return $this->id;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getUser1()
+    {
+        return $this->user1;
+    }
+
+    /**
+     * @param mixed $user1
+     */
+    public function setUser1($user1): void
+    {
+        $this->user1 = $user1;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUser2()
+    {
+        return $this->user2;
+    }
+
+    /**
+     * @param mixed $user2
+     */
+    public function setUser2($user2): void
+    {
+        $this->user2 = $user2;
+    }
+
+
 }
