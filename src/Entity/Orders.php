@@ -31,9 +31,8 @@ class Orders
     private $status;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Recipes", inversedBy="orders")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Recipes", cascade={"persist"})
      */
-
     private $recipes;
 
     /**

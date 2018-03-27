@@ -1,7 +1,7 @@
 <li>
     <div class="background-logged">
         <div class="user-view">
-            {#<a href="{{ url('auteur', {id : user.id}) }}"><img class="circle" src="{{ asset(user.avatar) }}"></a>#}
+            <a href="{{ url('auteur', {id : user.id}) }}"><img class="circle" src="{{ asset(user.avatar) }}"></a>
             <a href="#!name"><span class="black-text name" style="text-transform: uppercase">{{ user.name }}</span></a>
             <a href="#!email"><span class="black-text email">{{ user.mail }}</span></a>
 

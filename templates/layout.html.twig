@@ -46,8 +46,9 @@
 
 
         <link href="{{ asset('css/templates/template-01/style.css') }}" rel="stylesheet">
-
-
+        <link href="{{ asset('css/templates/template-01/editor.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/templates/template-01/mesplats.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/templates/template-01/platscommander.css') }}" rel="stylesheet">
 
     {# ---------------------------------------------------------------------------------------------- #}
 
@@ -70,8 +71,23 @@
         </div>
     </div>
 
-    <!--Contenu-->
-    {% block content '' %}
+    {#
+
+                PETITE IDEE D'ETIENNOURS
+       Ne pas toucher (sauf contre indication)
+                    Merci, bisous
+
+                                                    #}
+
+    {#<div class="container">#}
+        {#<div class="container1" id="myDIV">#}
+            {#<div class="container2">#}
+                <!--Contenu-->
+                {% block content '' %}
+            {#</div>#}
+        {#</div>#}
+    {#</div>#}
+
 
     {# Le Pied de Page #}
     {% include 'components/_footer.html.twig' %}
@@ -104,6 +120,7 @@
     <script src="{{ asset('js/index/editor.js') }}"></script>
     <script src="{{ asset('js/index/_navbar.js') }}"></script>
     <script src="{{ asset('js/index/sidebar.js') }}"></script>
+    <script src="{{ asset('js/index/auteur.js') }}"></script>
 
     {# --------------------------------------------------------------------------------- #}
 {% endblock %}

@@ -17,15 +17,16 @@ circle responsive-img {
     width: 100%;
 }
 #meilleur {
-    margin-left:10px;
+
     font-family: 'Amatic SC', cursive;
     color: black;
 
 }
 #recette {
-    margin-left:10px;
+
     font-family: 'Amatic SC', cursive;
     color: black;
+    text-align: center;
 }
 
 #logo {

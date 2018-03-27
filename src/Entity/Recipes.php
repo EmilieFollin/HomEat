@@ -36,7 +36,7 @@ class Recipes
     private $price;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\CategoriesRecipes", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="App\Entity\CategoriesRecipes", cascade={"persist"})
      */
     private $categories_recipes;
     /**
@@ -50,6 +50,50 @@ class Recipes
     /**
      * @return mixed
      */
+    /**
+     * @return mixed
+     * @ORM\Column(type="time")
+     */
+    private $hour;
+
+    /**
+     * @return mixed
+     */
+    public function getHour()
+    {
+        return $this->hour;
+    }
+
+    /**
+     * @param mixed $hour
+     */
+    public function setHour($hour): void
+    {
+        $this->hour = $hour;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getQuantity()
+    {
+        return $this->quantity;
+    }
+
+    /**
+     * @param mixed $quantity
+     */
+    public function setQuantity($quantity): void
+    {
+        $this->quantity = $quantity;
+    }
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $quantity;
+
+
     public function getCuisto()
     {
         return $this->cuisto;
@@ -66,14 +110,6 @@ class Recipes
     /**
      * @return mixed
      */
-    public function getOrders()
-    {
-        return $this->orders;
-    }
-
-    /**
-     * @return mixed
-     */
     public function getImage()
     {
         return $this->image;
@@ -85,14 +121,6 @@ class Recipes
     public function setImage($image): void
     {
         $this->image = $image;
-    }
-    /**
-     * @param mixed $orders
-     */
-    public function setOrders (Orders $Orders)
-    {
-        $this->Orders = $Orders;
-        return $this;
     }
 
     /**
@@ -122,21 +150,18 @@ class Recipes
         return $this->categories_recipes;
     }
 
-    public function addCategoryRecipe(CategoryRecipe $CategoryRecipe)
+    public function setCategoriesRecipes($categorie): void
     {
-        $this->categories_recipes[] = $CategoryRecipe;
-        return $this;
+        $this->categories_recipes = $categorie;
     }
 
-    public function removeRecipe (removeRecipe $removeRecipe)
-    {
-        $this->categories_recipes->removeElement($removeRecipe);
-    }
+
+
 
     public function __construct()
     {
-        $this->categories_recipes = new ArrayCollection();
-        $this->ingredients = new ArrayCollection();
+        $this->ingredients          =   new ArrayCollection();
+        $this->hour                 =   new \DateTime();
     }
 
     /**

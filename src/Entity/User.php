@@ -18,6 +18,10 @@ class User
      */
     private $id;
 
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
+    //private $pseudo;
 
     /**
      * @ORM\Column(type="string", length=100)
@@ -274,6 +278,22 @@ class User
     {
         $this->lastConnexion = $lastConnexion;
     }
+
+//    /**
+//     * @return mixed
+//     */
+//    public function getPseudo()
+//    {
+//        return $this->pseudo;
+//    }
+//
+//    /**
+//     * @param mixed $pseudo
+//     */
+//    public function setPseudo($pseudo): void
+//    {
+//        $this->pseudo = $pseudo;
+//    }
 
 
 }

@@ -93,16 +93,6 @@ header, main, footer {
     text-align: center;
 }
 
-
-#filtre-container{
-    background-color: white;
-    border-radius: 10px;
-}
-
-#filtre-container form{
-    margin: 20px;
-}
-
 /*------------------------------------ section card page d'accueil --------------------------------------------*/
 body main #div-card{
     position: relative;
@@ -120,14 +110,6 @@ body .liste-plat #panier{
 body main .card-image{
 
     position: relative;
-    height: 300px;
-    background-position: center;
-    background-size: cover;
-}
-body main .card-image #img-plat{
-
-
-    object-fit: cover;
 }
 
 body main .cuisto{
@@ -216,3 +198,4 @@ body main .note{
 
 
 }
+
