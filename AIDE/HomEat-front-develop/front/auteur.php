@@ -181,7 +181,7 @@
 </div>
 -->
     <div class="container">
-    <div class="card">
+    <div class="card z-depth-5">
         <div class="card-content center-align">
             <img style="width: 10%; padding: 10px;" src="https://scontent-cdt1-1.xx.fbcdn.net/v/t1.0-9/23795538_1650975411690508_364041306487306684_n.jpg?_nc_cat=0&oh=2322e6a982435ed2c7a7093fa557cdcd&oe=5B73C98E" class="circle responsive-img" alt="photo de profil auteur">
             <h5>Nom de l'auteur</h5>
